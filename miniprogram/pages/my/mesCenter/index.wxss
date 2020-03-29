@@ -1,0 +1,21 @@
+/* miniprogram/pages/my/mesCenter/index.wxss */
+
+/* pages/home/messagesCenter/index.wxss */
+.content{
+  padding: 30rpx;
+}
+.list_item{
+  display: flex;
+  justify-content: space-between;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom:1px solid rgba(0,0,0,0.1); 
+  font-size:26rpx;
+  margin-top:30rpx; 
+}
+.title{
+  color:#333333;
+}
+.time{
+  color:#666666;
+}

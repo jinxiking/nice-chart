@@ -1,0 +1,19 @@
+<!--miniprogram/pages/active/index/index.wxml-->
+<image src='../../../images/active/active_bg.png' class='bg_img'></image>
+<view class='content'>
+  <view class='bg_top_content'>
+    <image src='../../../images/active/top.png' class='bg_top'></image>
+  </view>
+
+  <view class='to_coupon_content'>
+    <view class='to_coupon'>我的优惠券 ></view>
+  </view>
+
+  <view class='turntable'>
+    
+
+  </view>
+
+
+
+</view>

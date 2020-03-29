@@ -1,0 +1,98 @@
+<!--miniprogram/pages/my/index/index.wxml-->
+<view class='my_top'>
+  <view class='scan'>
+   
+  </view>
+  <view class='scan_action'>
+    <image src='../../../images/my/scan.png' mode="widthFix" class='scan_img'></image>
+    <text class='sacn_text'>扫一扫</text>
+  </view>
+
+  <view class='user'> 
+    <image src='../../../images/home/shop.png' mode="widthFix" class='user_img'></image>
+  </view>
+
+  <view class='user_name'> 
+    FUNERAL LOVE
+  </view>
+
+  <view class='user_number'> 
+    <view class='number_cont'>
+      <view>346</view>
+      <view class='number_dro'>秒杀</view>
+      <view class='line'></view>
+    </view>
+    <view class='number_cont'>
+      <view>89</view>
+      <view class='number_dro'>活动</view>
+      <view class='line'></view>
+    </view>
+    <view class='number_cont'>
+      <view>56</view>
+      <view class='number_dro'>已使用</view>
+    </view>
+  </view>
+
+
+
+</view>
+
+<view class='my_cont'>
+  <view class='card'> 
+    <view class='card_item' bindtap="toActive">
+      <view class='card_left'>
+        <image src='../../../images/my/icon_1.png' mode="widthFix" class='icon_img_1'></image>
+        <text class='card_name'>我的活动</text>
+      </view>
+
+      <view class='card_right'>
+          >
+      </view>
+    </view>
+
+    <view class='card_item' bindtap="toMes">
+      <view class='card_left'>
+        <image src='../../../images/my/icon_2.png' mode="widthFix" class='icon_img_1'></image>
+        <text class='card_name'>消息</text>
+      </view>
+
+      <view class='card_right'>
+          >
+      </view>
+    </view>
+
+    <view class='card_item' bindtap="toCoupon">
+      <view class='card_left'>
+        <image src='../../../images/my/icon_3.png' mode="widthFix" class='icon_img_1'></image>
+        <text class='card_name'>优惠券</text>
+      </view>
+
+      <view class='card_right'>
+          >
+      </view>
+    </view>
+
+    <view class='card_item' bindtap="toQuestion">
+      <view class='card_left'>
+        <image src='../../../images/my/icon_4.png' mode="widthFix" class='icon_img_1'></image>
+        <text class='card_name'>意见反馈</text>
+      </view>
+
+      <view class='card_right'>
+          >
+      </view>
+    </view>
+
+    <view class='card_item'>
+      <view class='card_left'>
+        <image src='../../../images/my/icon_5.png' mode="widthFix" class='icon_img_1'></image>
+        <text class='card_name'>商务合作微信：xxxxx</text>
+      </view>
+
+      <view class='card_right'>
+          >
+      </view>
+    </view>
+  </view>
+
+</view>

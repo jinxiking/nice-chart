@@ -1,0 +1,19 @@
+/* miniprogram/pages/my/mesDetail/index.wxss *//* pages/home/mesDetail/index.wxss */
+
+.title{
+  font-size: 30rpx;
+  color:#333333;
+
+}
+.time{
+  font-size: 20rpx;
+  color:#999999;
+}
+.drocont{
+  margin-top: 10rpx;
+}
+.top_videw{
+  display: block;
+  width: 100%;
+  margin-top: 10rpx;
+}

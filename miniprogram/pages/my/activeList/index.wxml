@@ -1,0 +1,31 @@
+<!--miniprogram/pages/my/activeList/index.wxml-->
+<view class='active_content'>
+  <view class='card' bindtap="toDetail">
+    <view class='card_left'>
+      <text class='text_1'>5</text><text  class='text_2'>折</text>
+    </view>
+    <view class='card_right'>
+      云百汇全场5折券备份
+    </view>
+  </view>
+
+
+  <view class='card'>
+    <view class='card_left'>
+      <text class='text_1'>5</text><text  class='text_2'>折</text>
+    </view>
+    <view class='card_right'>
+      云百汇全场5折券备份
+    </view>
+  </view>
+
+  <view class='card'>
+    <view class='card_left'>
+      <text class='text_1'>5</text><text  class='text_2'>折</text>
+    </view>
+    <view class='card_right'>
+      云百汇全场5折券备份
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,38 @@
+<!--miniprogram/pages/home/detail/index.wxml-->
+<view class='top_content'>
+  <image src='../../../images/home/detail_top.png' mode="widthFix" class='top_img'></image>
+  <image src='../../../images/home/shop.png' mode="widthFix" class='logo'></image>
+</view>
+
+<view class='shop_name'>
+    <view class='name'>永辉超市</view>
+    <view class='adress'><image src='../../../images/my/adress_icon.png' mode="widthFix" class='adr_icon'></image>XX市XX区XX路</view>
+</view>
+
+<view class='card_content'>
+  <view class='card'> 
+    <view class='card_title'>活动说明：该优惠券适用于永辉超市以下商品</view>
+    <view class='card_dro'>
+        <image src='../../../images/home/shop.png' mode="widthFix" class='card_img'></image>
+        <view class='card_text'>
+          <view class='card_text_name'>洋河蓝色经典绵柔白酒 梦之蓝M6+ 52度 550ML</view>
+          <view class='card_text_number'>优惠券20</view>
+        </view>
+    </view>
+  </view>
+
+
+  <view class='tips'>
+    <view>活动时间</view>
+    <view>秒杀后7日内可消费，超过7日该优惠券自欧东失效</view>
+  </view>
+
+
+  <view class='button'>
+    去抢购
+  </view>
+</view>
+
+
+
+

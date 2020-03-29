@@ -1,0 +1,68 @@
+<!--miniprogram/pages/my/question/index.wxml-->
+<view class='tips'>
+  请选择问题类型
+</view>
+
+<view class='type_content'>
+  <view class='type_item border'>
+    功能异常
+  </view>
+  <view class='type_item'>
+    感兴趣的产品
+  </view>
+</view>
+
+
+<view class='content'>
+  <view class='content_title'>意见描述</view>
+  <view class='textarea'>
+      <textarea  class='text_in' placeholder='输入异常信息、或者您需要的产品名称、产品店铺地址、我们尽全力为您争取' 
+      placeholder-class='placeholder'
+      ></textarea>  
+      <view class='text_number'>0 / 99</view>
+  </view>
+  <view class='content_title mt20'>添加图片<text class='content_tips'>（选填）</text></view>
+
+  <view class='upload_content'>
+      <view class='upload_item'>
+          <view class='img_cont'>
+            <image src='../../../images/my/upload.png' mode="widthFix" class='icon_img'></image>
+          </view>
+          <view class='text_cont'>
+            0 / 3
+          </view>
+      </view>
+
+      <view class='upload_item'>
+          <view class='img_cont'>
+            <image src='../../../images/my/upload.png' mode="widthFix" class='icon_img'></image>
+          </view>
+          <view class='text_cont'>
+            0 / 3
+          </view>
+      </view>
+
+      <view class='upload_item'>
+          <view class='img_cont'>
+            <image src='../../../images/my/upload.png' mode="widthFix" class='icon_img'></image>
+          </view>
+          <view class='text_cont'>
+            0 / 3
+          </view>
+      </view>
+  </view>
+
+  
+</view>
+
+<view class='contect'>
+    <view>联系方式<text class='content_tips'>（选填）</text></view>
+    <!-- <view class='contect'>请留下您的联系方式</view> -->
+    <input class='tel'  placeholder='请留下您的联系方式'></input>
+</view>
+
+<view class='submit_cont'>
+  <view class='button'>
+    提交
+  </view>
+</view>

@@ -1,0 +1,109 @@
+<!--miniprogram/pages/home/index/index.wxml-->
+<view class='banner_content'>
+  <swiper
+    indicator-dots="{{indicatorDots}}" 
+    autoplay="{{autoplay}}" 
+    current = "{{current}}"
+    class='swiper_now'
+    bindchange = 'bindchange'
+    > 
+    <block wx:for="{{bannerList}}" wx:for-item='item' wx:key="index">
+      <swiper-item>
+        <image src='{{item.top_images}}' class='banner_img' mode="widthFix" bindtap='toActive' id='{{item.ID}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='step_tips'>
+    <text class='big'>{{current+1}}</text> / <text>{{bannerList.length}}</text>
+  </view>
+
+</view>
+
+<view class='time_content'>
+    <view>
+      <view class='time_show'>10:00</view>
+      <view class='time_dro'>已结束</view>
+    </view>
+    <view>
+      <view class='time_show'>10:00</view>
+      <view class='time_dro'>已结束</view>
+    </view>
+    <view>
+      <view class='time_show'>10:00</view>
+      <view class='time_dro'>已结束</view>
+    </view>
+    <view>
+      <view class='time_show'>10:00</view>
+      <view class='time_dro'>已结束</view>
+    </view>
+    <view>
+      <view class='time_show'>10:00</view>
+      <view class='time_dro'>已结束</view>
+    </view>
+  
+
+</view>
+
+<view class='card_content'>
+  <view class='card'> 
+    <view class='img_content'>
+      <image src='../../../images/home/shop.png' class='nav_img'></image>
+    </view>
+    <view class='shop_dro'>
+      <view class='shop_title'>永乐超市五折卷</view>
+      <view class='shop_num'>限量20份</view>
+      <view class='shop_time'>倒计时2:2:2</view>
+
+    </view>
+    <view class='button' bindtap='topDetai'>去抢购 ></view>
+  </view>
+  <view class='card'> 
+    <view class='img_content'>
+      <image src='../../../images/home/shop.png' class='nav_img'></image>
+    </view>
+    <view class='shop_dro'>
+      <view class='shop_title'>永乐超市五折卷</view>
+      <view class='shop_num'>限量20份</view>
+      <view class='shop_time'>倒计时2:2:2</view>
+
+    </view>
+    <view class='button'>去抢购 ></view>
+  </view>
+  <view class='card'> 
+    <view class='img_content'>
+      <image src='../../../images/home/shop.png' class='nav_img'></image>
+    </view>
+    <view class='shop_dro'>
+      <view class='shop_title'>永乐超市五折卷</view>
+      <view class='shop_num'>限量20份</view>
+      <view class='shop_time'>倒计时2:2:2</view>
+
+    </view>
+    <view class='button'>去抢购 ></view>
+  </view>
+  <view class='card'> 
+    <view class='img_content'>
+      <image src='../../../images/home/shop.png' class='nav_img'></image>
+    </view>
+    <view class='shop_dro'>
+      <view class='shop_title'>永乐超市五折卷</view>
+      <view class='shop_num'>限量20份</view>
+      <view class='shop_time'>倒计时2:2:2</view>
+
+    </view>
+    <view class='button'>去抢购 ></view>
+  </view>
+  <view class='card'> 
+    <view class='img_content'>
+      <image src='../../../images/home/shop.png' class='nav_img'></image>
+    </view>
+    <view class='shop_dro'>
+      <view class='shop_title'>永乐超市五折卷</view>
+      <view class='shop_num'>限量20份</view>
+      <view class='shop_time'>倒计时2:2:2</view>
+
+    </view>
+    <view class='button'>去抢购 ></view>
+  </view>
+</view>

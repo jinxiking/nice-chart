@@ -1,0 +1,94 @@
+/* miniprogram/pages/my/couponDetail/index.wxss */
+.tab_cont{
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  position: fixed;
+  top:0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+}
+.active{
+  color:#FE2A41!important;
+  border-bottom:8rpx solid #FE2A41;
+}
+
+.tap_item{  
+  color:#333;
+  width: 228rpx; 
+  height: 84rpx; 
+  display: inline-block;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.scroll_content{
+  padding:24rpx 32rpx;
+  margin-top: 94rpx;
+}
+
+.card_item{
+  background: #fff;
+  box-shadow:0px 2px 4px 0px rgba(0,0,0,0.04);
+  border-radius: 12rpx;
+  margin-bottom: 24rpx;
+}
+
+.card_top{
+  height: 170rpx;
+  position: relative;
+  display: flex;
+
+}
+
+.card_bottom{
+  padding: 24rpx;
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+
+.card_left{
+  line-height: 170rpx;
+  width:94rpx;
+  font-size:28px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(254,42,65,1);
+  text-align: center;
+  margin-left: 32rpx;
+}
+
+.card_right{
+  margin-left: 34rpx;
+
+}
+
+.card_right_top{
+  margin-top: 32rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+
+.card_right_bottom{
+  font-size:24rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  margin-top: 24rpx;
+}
+
+.button{
+  position: absolute;
+  background:linear-gradient(270deg,rgba(254,27,66,1) 0%,rgba(250,123,59,1) 100%);
+  color:#fff;
+  border-radius:12rpx;
+  font-size: 26rpx;
+  padding:6rpx 12rpx;
+  right:32rpx;
+  bottom:60rpx;
+}

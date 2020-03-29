@@ -1,0 +1,9 @@
+<!--miniprogram/pages/my/mesCenter/index.wxml-->
+<!--pages/home/messagesCenter/index.wxml-->
+
+<view class='content'>
+  <view class='list_item' wx:for='{{list}}' wx:key="index" bindtap='mesDetail' id='{{item.ID}}'>
+    <text class='title'>{{item.notice_title}}</text>
+    <text class='time'>{{item.c_time}}</text>
+  </view>
+</view>
