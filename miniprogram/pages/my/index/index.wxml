@@ -46,7 +46,7 @@
       </view>
 
       <view class='card_right'>
-          >
+          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
       </view>
     </view>
 

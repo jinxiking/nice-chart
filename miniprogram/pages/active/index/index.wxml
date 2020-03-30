@@ -10,9 +10,43 @@
   </view>
 
   <view class='turntable'>
-    
-
+    <image src='../../../images/active/zhuanpan_bg.png' class='mid_bg'></image>
+    <view class='num_1 {{scrollCurrent == 1 ? "active" : ""}}' >1</view>
+    <view class='num_2 {{scrollCurrent == 2 ? "active" : ""}}'>2</view>
+    <view class='num_3 {{scrollCurrent == 3 ? "active" : ""}}'>3</view>
+    <view class='num_4 {{scrollCurrent == 4 ? "active" : ""}}'>4</view>
+    <view class='num_5 {{scrollCurrent == 5 ? "active" : ""}}'>5</view>
+    <view class='num_6 {{scrollCurrent == 6 ? "active" : ""}}'>6</view>
+    <view class='num_7 {{scrollCurrent == 7 ? "active" : ""}}'>7</view>
+    <view class='num_8 {{scrollCurrent == 8 ? "active" : ""}}'>8</view>
+    <view class='num_9' bindtap='begin'>开始</view>
   </view>
+
+
+  <view class='winning'>
+  
+      <view class='swiper_content'>
+      </view>
+   
+    
+      <swiper
+        indicator-dots="{{indicatorDots}}" 
+        autoplay="{{autoplay}}" 
+        current = "{{current}}"
+        vertical='{{vertical}}'
+        class='swiper_now'
+        > 
+        <block wx:for="{{bannerList}}" wx:for-item='item' wx:key="index">
+          <swiper-item class="item_swiper" catchtouchmove="stopTouchMove">
+              <view>{{item.text}}</view>
+              <view>{{item.text}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+    
+  </view>
+
+  
 
 
 

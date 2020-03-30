@@ -1,6 +1,7 @@
 <!--miniprogram/pages/my/activeDetail/index.wxml-->
 <view class='content'>
   <view class='top'>
+    <image src='../../../images/my/detail_bg.png' mode="widthFix" class='detail_bg'></image>
     <view class='active_name'> 
       云百汇全场5折券
     </view>
@@ -15,7 +16,6 @@
         <view class='active_num'>500</view>
         <view class='active_dro'>被获取</view>
       </view>
-
       <view>
         <view class='active_num'>200</view>
         <view class='active_dro'>已消费</view>

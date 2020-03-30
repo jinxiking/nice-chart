@@ -2,56 +2,45 @@
 <view  class='tab_cont'>
   <view wx:for='{{shopList}}' wx:key='index' id='{{index}}' class='tap_item {{current == index?"active":""}}' bindtap='changTab'>{{item.name}}</view>
 </view>
-<view class='scroll_content'> 
-  <view class='card_item'>
-    <view class='card_top'>
-        <view class='card_left'>
-            7折
-        </view>
-        <view class='card_right'>
-          <view class='card_right_top'>生鲜水果优惠券</view>
-          <view class='card_right_bottom'>适用于：生鲜水果</view>
-        </view>
-        <view class='button'>立即使用</view>
-    </view>
-    <view class='card_bottom'>
-      有效期至:2020-04-25
-    </view>
+<view class='contenter'>
+  <view class='scroll_content'> 
     
-  </view>
+    <view class='card_item'>
+      <image src='../../../images/my/coupon_bg.png' mode="widthFix" class='coupon_bg'></image>
+      <view class='card_top'>
+          <view class='card_left'>
+              7折
+          </view>
+          <view class='card_right'>
+            <view class='card_right_top'>生鲜水果优惠券</view>
+            <view class='card_right_bottom'>适用于：生鲜水果</view>
+          </view>
+          <view class='button'>立即使用</view>
+      </view>
+      <view class='card_bottom'>
+        有效期至:2020-04-25
+      </view>
+      
+    </view>
 
-  <view class='card_item'>
-    <view class='card_top'>
-        <view class='card_left'>
-            7折
-        </view>
-        <view class='card_right'>
-          <view class='card_right_top'>生鲜水果优惠券</view>
-          <view class='card_right_bottom'>适用于：生鲜水果</view>
-        </view>
-        <view class='button'>立即使用</view>
+    <view class='card_item'>
+      <image src='../../../images/my/coupon_bg.png' mode="widthFix" class='coupon_bg'></image>
+      <view class='card_top'>
+          <view class='card_left'>
+              7折
+          </view>
+          <view class='card_right'>
+            <view class='card_right_top'>生鲜水果优惠券</view>
+            <view class='card_right_bottom'>适用于：生鲜水果</view>
+          </view>
+          <view class='button'>立即使用</view>
+      </view>
+      <view class='card_bottom'>
+        有效期至:2020-04-25
+      </view>
+      
     </view>
-    <view class='card_bottom'>
-      有效期至:2020-04-25
-    </view>
-    
-  </view>
 
-  <view class='card_item'>
-    <view class='card_top'>
-        <view class='card_left'>
-            7折
-        </view>
-        <view class='card_right'>
-          <view class='card_right_top'>生鲜水果优惠券</view>
-          <view class='card_right_bottom'>适用于：生鲜水果</view>
-        </view>
-        <view class='button'>立即使用</view>
-    </view>
-    <view class='card_bottom'>
-      有效期至:2020-04-25
-    </view>
     
   </view>
-  
 </view>

@@ -5,10 +5,12 @@
 
 <view class='type_content'>
   <view class='type_item border'>
-    功能异常
+    <text>功能异常</text>
+    <image src='../../../images/my/yes.png' mode="widthFix" class='icon_yes'></image>
   </view>
   <view class='type_item'>
     感兴趣的产品
+    <image src='../../../images/my/yes.png' mode="widthFix" class='icon_yes'></image>
   </view>
 </view>
 

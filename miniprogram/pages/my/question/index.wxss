@@ -17,6 +17,9 @@
   height: 100rpx;
   color:#333;
   line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .border{
   border-bottom:1rpx solid #F5F5F5;
@@ -123,4 +126,7 @@
   font-size: 36rpx;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
+}
+.icon_yes{
+  width: 32rpx;
 }

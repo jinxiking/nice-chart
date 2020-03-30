@@ -140,5 +140,10 @@
   top:-2rpx
 }
 
+.right{
+  width: 30rpx;
+  position: relative;
+  top:2rpx;
+}
 
 

@@ -2,6 +2,18 @@
 page{
   background-color:#F5F5F5 ;
 }
+.active .time_show{
+  color:#E0361C!important;
+}
+
+.active .time_dro{
+  color:#fff!important;
+  background:linear-gradient(270deg,rgba(254,27,66,1) 0%,rgba(250,123,59,1) 100%);
+  box-shadow:0px 2px 4px 0px rgba(229,65,66,0.26);
+  border-radius:16rpx!important;
+  height: 32rpx!important;
+ 
+}
 
 .swiper-item{
   width: 100%;
@@ -30,6 +42,7 @@ page{
   color:#777777;
   margin-top: 5rpx;
   font-weight:400;
+  padding: 0 8rpx!important;
 }
 
 .card_content{
@@ -107,4 +120,7 @@ page{
 }
 .big{
   font-size: 40rpx;
+}
+.right{
+  width: 18rpx;
 }

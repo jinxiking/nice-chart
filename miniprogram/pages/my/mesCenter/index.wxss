@@ -1,8 +1,12 @@
 /* miniprogram/pages/my/mesCenter/index.wxss */
 
 /* pages/home/messagesCenter/index.wxss */
+page{
+  background: #fff;
+}
 .content{
   padding: 30rpx;
+  padding-top:0rpx;
 }
 .list_item{
   display: flex;

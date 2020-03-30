@@ -4,9 +4,9 @@ page{
 }
 .bg_img{
   width: 100%;
-  height:100vh;
+  height:110vh;
   position: fixed;
-  top:0;
+  top:-5rpx;
   left:0;
   z-index: 1;
 }
@@ -44,7 +44,96 @@ page{
   margin-right: 56rpx;
   height: 650rpx;
   width: 650rpx;
+  position: relative;
+}
+.mid_bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+}
+.turntable>view{
+  width: 180rpx;
+  height: 180rpx;
   background: #fff;
+  box-shadow:3rpx -5rpx 0px 0px rgba(255,214,201,1);
+  border-radius:16rpx;
+  position: absolute;
+  text-align: center;
+  z-index: 10;
+
+}
+
+.num_1{
+  top:46rpx;
+  left:46rpx;
 }
 
 
+.num_2{
+  top:46rpx;
+  left:237rpx;
+}
+
+.num_3{
+  top:46rpx;
+  right:46rpx;
+}
+
+.num_4{
+  top:237rpx;
+  right:46rpx;
+}
+
+.num_5{
+  bottom:46rpx;
+  right:46rpx;
+}
+
+.num_6{
+  bottom:46rpx;
+  left:237rpx;
+}
+
+.num_7{
+  bottom:46rpx;
+  left:46rpx;
+}
+
+.num_8{
+  top:237rpx;
+  left:46rpx;
+}
+
+.num_9{
+  top:237rpx;
+  left:237rpx;
+}
+
+.winning{
+  position: relative;
+  z-index: 100;
+  padding:24rpx 60rpx;
+
+}
+.swiper_content{
+  height:140rpx;
+  background:rgba(255,205,185,1);
+  border-radius:16px;
+  opacity:0.2;
+  z-index: 100;
+  width: 100%;
+  overflow: hidden;
+}
+.swiper_now{
+  margin-top: -140rpx;
+  overflow: hidden;
+}
+.item_swiper view{
+  line-height: 70rpx;
+  text-align: center;
+  color:#fff;
+}
+.active{
+  background: red!important;
+}
