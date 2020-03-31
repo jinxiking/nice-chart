@@ -1,4 +1,5 @@
-// pages/home/messagesCenter/index.js
+
+const util = require('../../../utils/ajax.js');
 
 Page({
 
@@ -16,7 +17,6 @@ Page({
         notice_title : '最新消息',
         c_time : '2020-12-12'
       }
-
     ]
   },
 
@@ -24,7 +24,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.loadList();
+    this.loadList();
   },
 
   /**
@@ -43,13 +43,29 @@ Page({
     // this.loadList();
   },
   fomatDate(val){
-    console.log(util.formatDate(val))
+  
     return util.formatDate(val)
   },
 
   loadList(){
-    
-   
+    util.ajax({
+      url: '/v1/notices/1/2',
+      method: 'GET',
+      data : {
+        page_index : this.data.page.page,
+        page_size : this.data.page.pageSize
+      },
+      success: (res) => {
+        this.setData({
+          list: res.data.list
+        })
+        // if (res.data.pageData.macPage == 0 || res.data.pageData.macPage == this.data.page.page){
+        //   this.setData({
+        //     finish : true
+        //   })
+        // }
+      }
+    })
     
   },
   mesDetail(e){

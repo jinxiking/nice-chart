@@ -21,8 +21,12 @@ page{
 .swiper_now{
   width: 100%;
 }
+.swiper-item{
+  height: 280rpx;
+}
 .banner_img{
   width: 100%;
+  height: 280rpx;
 }
 
 .time_content{
@@ -100,6 +104,7 @@ page{
 
 .banner_content{
   position: relative;
+  height: 280rpx;
 }
 .step_tips{
   position: absolute;

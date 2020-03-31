@@ -1,4 +1,4 @@
-// miniprogram/pages/my/index/index.js
+// miniprogram/pages/my/questionDetail/index.js
 Page({
 
   /**
@@ -62,30 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  toMes(){
-    wx.navigateTo({
-      url: '/pages/my/mesCenter/index',
-    })
-  },
-  toActive(){
-    wx.navigateTo({
-      url: '/pages/my/activeList/index',
-    })
-  },
-  toQuestion(){
-    wx.navigateTo({
-      url: '/pages/my/question/index',
-    })
-  },
-  toCoupon(){
-    wx.navigateTo({
-      url: '/pages/my/coupon/index',
-    })
-  },
-  toQuestionDetail(){
-    wx.navigateTo({
-      url: '/pages/my/questionDetail/index',
-    })
   }
 })

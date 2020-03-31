@@ -4,13 +4,13 @@
 </view>
 
 <view class='type_content'>
-  <view class='type_item border'>
+  <view class='type_item border' data-index="1" bindtap="changeType">
     <text>功能异常</text>
-    <image src='../../../images/my/yes.png' mode="widthFix" class='icon_yes'></image>
+    <image src='../../../images/my/yes.png' wx:if='{{type == 1}}' mode="widthFix" class='icon_yes'></image>
   </view>
-  <view class='type_item'>
+  <view class='type_item' data-index="2" bindtap="changeType">
     感兴趣的产品
-    <image src='../../../images/my/yes.png' mode="widthFix" class='icon_yes'></image>
+    <image src='../../../images/my/yes.png' wx:if='{{type == 2}}' mode="widthFix" class='icon_yes'></image>
   </view>
 </view>
 
@@ -20,12 +20,23 @@
   <view class='textarea'>
       <textarea  class='text_in' placeholder='输入异常信息、或者您需要的产品名称、产品店铺地址、我们尽全力为您争取' 
       placeholder-class='placeholder'
+      value='{{message}}'
+      bindinput='bindinputArea'
       ></textarea>  
-      <view class='text_number'>0 / 99</view>
+      <view class='text_number'>{{message.length}} / 99</view>
   </view>
   <view class='content_title mt20'>添加图片<text class='content_tips'>（选填）</text></view>
 
   <view class='upload_content'>
+      <view class='upload_item' bindtap="uploadImg">
+          <view class='img_cont'>
+            <image src='../../../images/my/upload.png' mode="widthFix" class='icon_img'></image>
+          </view>
+          <view class='text_cont'>
+            0 / 3
+          </view>
+      </view>
+<!-- 
       <view class='upload_item'>
           <view class='img_cont'>
             <image src='../../../images/my/upload.png' mode="widthFix" class='icon_img'></image>
@@ -42,16 +53,7 @@
           <view class='text_cont'>
             0 / 3
           </view>
-      </view>
-
-      <view class='upload_item'>
-          <view class='img_cont'>
-            <image src='../../../images/my/upload.png' mode="widthFix" class='icon_img'></image>
-          </view>
-          <view class='text_cont'>
-            0 / 3
-          </view>
-      </view>
+      </view> -->
   </view>
 
   
@@ -60,7 +62,7 @@
 <view class='contect'>
     <view>联系方式<text class='content_tips'>（选填）</text></view>
     <!-- <view class='contect'>请留下您的联系方式</view> -->
-    <input class='tel'  placeholder='请留下您的联系方式'></input>
+    <input class='tel' type='number' value='{{tel}}' maxlength='11' placeholder='请留下您的联系方式' bindinput="telInput"></input>
 </view>
 
 <view class='submit_cont'>

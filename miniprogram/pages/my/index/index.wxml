@@ -57,7 +57,7 @@
       </view>
 
       <view class='card_right'>
-          >
+          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
       </view>
     </view>
 
@@ -68,7 +68,7 @@
       </view>
 
       <view class='card_right'>
-          >
+          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
       </view>
     </view>
 
@@ -79,7 +79,18 @@
       </view>
 
       <view class='card_right'>
-          >
+          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
+      </view>
+    </view>
+
+    <view class='card_item' bindtap="toQuestionDetail">
+      <view class='card_left'>
+        <image src='../../../images/my/icon_7.png' mode="widthFix" class='icon_img_1'></image>
+        <text class='card_name'>常见问题</text>
+      </view>
+
+      <view class='card_right'>
+          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
       </view>
     </view>
 
@@ -90,7 +101,7 @@
       </view>
 
       <view class='card_right'>
-          >
+          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
       </view>
     </view>
   </view>

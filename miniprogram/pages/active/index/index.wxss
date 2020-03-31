@@ -23,7 +23,7 @@ page{
   margin-top: 60rpx;
 }
 .to_coupon_content{
- 
+  
   display: flex;
   justify-content: center;
 }

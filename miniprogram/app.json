@@ -1,21 +1,17 @@
 {
   "pages": [
-    "pages/home/index/index",
     "pages/my/question/index",
+    "pages/home/index/index",
+    "pages/my/mesCenter/index",
     "pages/my/activeDetail/index",
     "pages/my/couponDetail/index",
-    
-
     "pages/active/index/index",
-    
     "pages/my/coupon/index",
-  
     "pages/my/index/index",
     "pages/my/activeList/index",
     "pages/home/detail/index",
-    
-    "pages/my/mesCenter/index",
-    "pages/my/mesDetail/index"
+    "pages/my/mesDetail/index",
+    "pages/my/questionDetail/index"
   ],
   "window": {
     "backgroundColor": "#fff",
@@ -51,6 +47,11 @@
         "auth": 0
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

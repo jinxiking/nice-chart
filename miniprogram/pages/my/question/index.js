@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    type : 1,
+    message : "",
+    tel : ''
   },
 
   /**
@@ -14,53 +16,53 @@ Page({
   onLoad: function (options) {
 
   },
+  changeType(e){
+    let num = e.currentTarget.dataset['index'];
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+    this.setData({
+      type : num
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  bindinputArea(value){
+    if(value.detail.value.length > 99){
+      let str = value.detail.value.substring(99,0);
+      this.setData({
+        message : str
+      })
+      return;
+    }
+    this.setData({
+      message : value.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  telInput(value){
+    this.setData({
+      tel : value.detail.value
+    })
   },
+  uploadImg(){
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success (res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        wx.uploadFile({
+          url: app.globalData.ajax_url + 'common/uploadImg', // 自己的服务器提供的图片的小程序choose接口地址
+          filePath: tempFiles,
+          name: 'file',
+          formData: {
+             userId: wx.getStorageSync('userId')
+          },
+          success(res) {
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+          }
+        }) 
+      }
+    })
   }
+
+
+
+
 })
