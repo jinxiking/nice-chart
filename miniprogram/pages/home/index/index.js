@@ -15,24 +15,7 @@ Page({
     duration: 500,
     current : 0,
     bannerList : [
-      {
-        top_images : '/images/home/top.png'
-      },
-      {
-        top_images : '/images/home/top.png'
-      },
-      {
-        top_images : '/images/home/top.png'
-      },
-      {
-        top_images : '/images/home/top.png'
-      },
-      {
-        top_images : '/images/home/top.png'
-      },
-      {
-        top_images : '/images/home/top.png'
-      }
+     
     ],
   },
 

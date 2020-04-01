@@ -13,10 +13,7 @@ Page({
     },
     finish : false,
     list : [
-      {
-        notice_title : '最新消息',
-        c_time : '2020-12-12'
-      }
+  
     ]
   },
 
@@ -31,42 +28,41 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(finish){
+    if(this.data.finish){
       return;
     }
     let num = this.data.page.page;
     this.setData({
       page : {
-        page : num + 1
+        page : num + 1,
+        pageSize : 20
       }
     })
-    // this.loadList();
-  },
-  fomatDate(val){
-  
-    return util.formatDate(val)
+    this.loadList();
   },
 
   loadList(){
     util.ajax({
-      url: '/v1/notices/1/2',
+      url: '/v1/notices/'+this.data.page.page+'/' + this.data.page.pageSize,
       method: 'GET',
       data : {
-        page_index : this.data.page.page,
-        page_size : this.data.page.pageSize
+
       },
       success: (res) => {
+        let list = this.data.list.concat(res.data.list)
         this.setData({
-          list: res.data.list
+          list: list
         })
-        // if (res.data.pageData.macPage == 0 || res.data.pageData.macPage == this.data.page.page){
-        //   this.setData({
-        //     finish : true
-        //   })
-        // }
+
+        
+        if (res.data.total == 0 || res.data.total  == this.data.page.page){
+          this.setData({
+            finish : true
+          })
+        }
+
       }
     })
-    
   },
   mesDetail(e){
     let id = e.currentTarget.id;

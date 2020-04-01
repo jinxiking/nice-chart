@@ -1,9 +1,9 @@
 <!--miniprogram/pages/my/mesCenter/index.wxml-->
 <!--pages/home/messagesCenter/index.wxml-->
-
+<wxs module="filter" src="../../../utils/public.wxs"></wxs>
 <view class='content'>
-  <view class='list_item' wx:for='{{list}}' wx:key="index" bindtap='mesDetail' id='{{item.ID}}'>
-    <text class='title'>{{item.notice_title}}</text>
-    <text class='time'>{{item.c_time}}</text>
+  <view class='list_item' wx:for='{{list}}' wx:key="index" bindtap='mesDetail' id='{{item.id}}'>
+    <text class='title'>{{item.title}}</text>
+    <text class='time'>{{filter.formatDate(item.c_time,"YY-MM-DD")}}</text>
   </view>
 </view>

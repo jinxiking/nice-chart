@@ -1,0 +1,55 @@
+/* miniprogram/pages/home/login/index.wxss */
+.bg_img{
+  width: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 1;
+
+}
+.logo_cont{
+  position: fixed;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.logo_img{
+  width: 192rpx;
+  margin-top: 56rpx;
+}
+.logo_name{
+  width: 290rpx;
+  margin-top: 6rpx;
+}
+.button_cont{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top:672rpx;
+  width: 100%;
+}
+
+.mybutton{
+  width: 664rpx;
+  height: 90rpx;
+  background:linear-gradient(270deg,rgba(254,27,66,1) 0%,rgba(250,123,59,1) 100%);
+  box-shadow:0rpx 4rpx 8rpx 0rpx rgba(229,65,66,0.26);
+  border-radius:45rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:36rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  border: none;
+}
+
+.chat{
+  width: 54rpx;
+  margin-right: 24rpx;
+}

@@ -1,4 +1,5 @@
 // miniprogram/pages/my/question/index.js
+const app = getApp();
 Page({
 
   /**
@@ -47,12 +48,13 @@ Page({
       sourceType: ['album', 'camera'],
       success (res) {
         // tempFilePath可以作为img标签的src属性显示图片
+        var tempFiles = res.tempFiles[0].path;
         wx.uploadFile({
-          url: app.globalData.ajax_url + 'common/uploadImg', // 自己的服务器提供的图片的小程序choose接口地址
+          url: app.globalData.url + '/v1/image/upload', // 自己的服务器提供的图片的小程序choose接口地址
           filePath: tempFiles,
           name: 'file',
           formData: {
-             userId: wx.getStorageSync('userId')
+             
           },
           success(res) {
 

@@ -1,0 +1,12 @@
+<!--miniprogram/pages/home/login/index.wxml-->
+<image src='../../../images/home/login_bg.png' mode="widthFix" class='bg_img'></image>
+<view class='logo_cont'>
+  <image src='../../../images/home/logo.png' mode="widthFix" class='logo_img'></image>
+  <image src='../../../images/home/name_logo.png' mode="widthFix" class='logo_name'></image>
+</view>
+<view class='button_cont'>
+  <button class='mybutton' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>
+    <image src='../../../images/home/weChat.png' mode="widthFix" class='chat'></image>
+    微信用户一键登录
+  </button>
+</view>

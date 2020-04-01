@@ -1,0 +1,26 @@
+
+var filter = {
+  formatDate: function (date, str = "YY-MM-DD") {
+    var newDate = getDate(date);
+    str = str.replace("YY", newDate.getFullYear());
+    str = str.replace("MM", add0(newDate.getMonth() + 1));
+    str = str.replace("DD", add0(newDate.getDate()));
+    str = str.replace("hh", add0(newDate.getHours()));
+    str = str.replace("mm", add0(newDate.getMinutes()));
+    str = str.replace("ss", add0(newDate.getSeconds()));
+    return str
+  }
+}
+
+var add0 = function(str){
+  str = str + '';
+  if (str.length >= 2) {
+    return str
+  } else {
+    return '0' + str
+  }
+}
+
+module.exports = {
+  formatDate: filter.formatDate
+}
