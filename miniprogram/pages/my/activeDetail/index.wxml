@@ -3,29 +3,29 @@
   <view class='top'>
     <image src='../../../images/my/detail_bg.png' mode="widthFix" class='detail_bg'></image>
     <view class='active_name'> 
-      云百汇全场5折券
+      {{detailTop.title}}
     </view>
 
     <view class='active_detail'>
       <view>
-        <view class='active_num'>1000</view>
+        <view class='active_num'>{{detailTop.total}}</view>
         <view class='active_dro'>总数</view>
       </view>
 
       <view>
-        <view class='active_num'>500</view>
+        <view class='active_num'>{{detailTop.receive}}</view>
         <view class='active_dro'>被获取</view>
       </view>
       <view>
-        <view class='active_num'>200</view>
+        <view class='active_num'>{{detailTop.use}}</view>
         <view class='active_dro'>已消费</view>
       </view>
 
       <view>
-        <view class='active_num'>289</view>
+        <view class='active_num'>{{detailTop.notUse}}</view>
         <view class='active_dro'>未消费</view>
       </view>
-
+      
     </view>
   </view>
 

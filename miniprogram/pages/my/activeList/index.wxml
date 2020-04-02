@@ -1,11 +1,12 @@
 <!--miniprogram/pages/my/activeList/index.wxml-->
 <view class='active_content'>
-    <view class='card' wx:for='{{activeList}}' wx:key='index' bindtap="toDetail" > 
+    <view class='card' wx:for='{{activeList}}' wx:key='index' bindtap="toDetail" id='{{item.id}}'> 
     <view class='card_left'>
-      <text class='text_1'>5</text><text  class='text_2'>折</text>
+      <image src='../../../images/home/shop.png' mode="widthFix" class='right'></image>
     </view>
+    <!-- https://luck-discount.oss-cn-beijing.aliyuncs.com/yulin/test/user/{{item.logo}} -->
     <view class='card_right'>
-      {{item.remark}}
+      {{item.title}}
     </view>
   </view>
 

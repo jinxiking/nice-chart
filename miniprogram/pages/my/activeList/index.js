@@ -61,36 +61,53 @@ Page({
    */
   onReachBottom: function () {
   
-    if(this.finish){
+    if(this.data.finish){
       return;
     }
     let num = this.data.page.page;
     this.setData({
       page : {
-        page : num + 1
+        page : num + 1,
+        pageSize : 10
       }
     })
-    this.loadList();
+    this.getActiveList();
   },
 
 
-  toDetail(){
+  toDetail(e){
+    
     wx.navigateTo({
-      url: '/pages/my/activeDetail/index',
+      url: '/pages/my/activeDetail/index?id=' + e.currentTarget.id,
     })
   },
   getActiveList(){
+    this.setData({
+      finish : true
+    })
     util.ajax({
       url: '/v1/campaign/'+this.data.page.page+'/' + this.data.page.pageSize,
       method: 'GET',
       data : {
-        
+         
       },
       success: (res) => {
         console.log(res)
+        let list = this.data.activeList.concat(res.data.list)
         this.setData({
-          activeList: res.data.list
+          activeList: list
         })
+
+        if (res.data.total == 0 || res.data.total  == this.data.page.page){
+          this.setData({
+            finish : true
+          })
+        }else{
+     
+          this.setData({
+            finish : false
+          })
+        }
       }
     })
   }

@@ -53,8 +53,11 @@ Page({
           url: app.globalData.url + '/v1/image/upload', // 自己的服务器提供的图片的小程序choose接口地址
           filePath: tempFiles,
           name: 'file',
+          header : {
+            token : app.globalData.token
+          },
           formData: {
-             
+            
           },
           success(res) {
 

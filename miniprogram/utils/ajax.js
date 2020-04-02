@@ -1,6 +1,7 @@
 const app = getApp();
 const ajax = (option) =>{
   var token = app.globalData.token;
+
   wx.showLoading({
     title: '加载中',
   })

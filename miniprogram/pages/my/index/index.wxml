@@ -13,22 +13,22 @@
   </view>
 
   <view class='user_name'> 
-    FUNERAL LOVE
+    {{detail.user_name}}
   </view>
 
   <view class='user_number'> 
     <view class='number_cont'>
-      <view>346</view>
+      <view>{{detail.seckill_num}}</view>
       <view class='number_dro'>秒杀</view>
       <view class='line'></view>
     </view>
     <view class='number_cont'>
-      <view>89</view>
+      <view>{{detail.campaign_num}}</view>
       <view class='number_dro'>活动</view>
       <view class='line'></view>
     </view>
     <view class='number_cont'>
-      <view>56</view>
+      <view>{{detail.consume_num}}</view>
       <view class='number_dro'>已使用</view>
     </view>
   </view>

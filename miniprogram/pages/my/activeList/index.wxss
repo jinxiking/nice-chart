@@ -3,6 +3,8 @@
   padding: 24rpx 32rpx;
 }
 
+
+
 .card{
   height:146rpx;
   background:rgba(255,255,255,1);
@@ -28,4 +30,8 @@
   font-size:30rpx;
   line-height: 146rpx;
   margin-left: 46rpx;
+}
+.right{
+  width: 90rpx;
+  margin-top: 28rpx;
 }

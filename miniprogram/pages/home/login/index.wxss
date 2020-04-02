@@ -49,6 +49,14 @@
   border: none;
 }
 
+.button_cont_two{
+
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top:872rpx;
+  width: 100%;
+}
 .chat{
   width: 54rpx;
   margin-right: 24rpx;

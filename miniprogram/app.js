@@ -2,20 +2,11 @@
 App({
   onLaunch: function () {
     
-  
-    this.getLocationNow();
-
-    // var token = ''
     var token = wx.getStorageSync('token') || '';
-    // 登录
+ 
+    // 登录过
     if (token) {
       this.globalData.token = token;
-      //这里需要做授权验证
-      // wx.switchTab({
-      //   url: '/pages/home/index/index',
-      // })
-    } else {
-      this.doLogin();
     }
   },
   getLocationNow(){
@@ -43,17 +34,22 @@ App({
           },
           method : 'post',
           success : (res)=>{
-            let token = res.data.data.token;
+            if(res.data.code == 200){
+              let token = res.data.data.token;
          
-            wx.setStorageSync('token', token);
-            _this.globalData.token = token;
-            if(res.data.data.is_upload){
-              _this.getSettings()  
+              wx.setStorageSync('token', token);
+              _this.globalData.token = token;
+              if(res.data.data.is_upload){
+                _this.getSettings()  
+              }else{
+                wx.switchTab({
+                  url: '/pages/home/index/index',
+                })
+              }
             }else{
-              wx.switchTab({
-                url: '/pages/home/index/index',
-              })
+              
             }
+           
           } 
         })
       }
