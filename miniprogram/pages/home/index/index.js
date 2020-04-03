@@ -27,7 +27,8 @@ Page({
       '0' : '未开始',
       '1' : '进行中',
       '2' : '已结束',
-    }
+    },
+    bottomList : []
   },
   onShow:function(){
 
@@ -87,7 +88,7 @@ Page({
           success : (res)=>{
             if(res.data.code == 200){
               let token = res.data.data.token;
-         
+              
               wx.setStorageSync('token', token);
               app.globalData.token = token;
               if(!res.data.data.is_upload){
@@ -194,8 +195,30 @@ Page({
           dataObj : res.data
         })
         for(var i in res.data){
-          console.log(i)
+          if(res.data[i] == 1){
+            this.setData({
+              activeIndex : i
+            })
+            this.getBottomList(i);
+          }
         }
+      }
+    })
+  },
+  getBottomList(i){
+    util.ajax({
+      url: '/v1/seckill/campaigns/' + i,
+      method: 'GET',
+      data : {
+
+        
+      },
+      success: (res) => {
+        console.log(res.data)
+        this.setData({
+          bottomList : res.data
+        })
+        
       }
     })
   },
@@ -208,13 +231,12 @@ Page({
       method: 'GET',
       data : {
         type : '2',
-        
       },
       success: (res) => {
+        
         this.setData({
           bannerList: res.data
         });
-        
       }
     })
   },
@@ -222,5 +244,6 @@ Page({
     this.setData({
       activeIndex : e.currentTarget.dataset.index
     })
+    this.getBottomList(e.currentTarget.dataset.index);
   }
 })

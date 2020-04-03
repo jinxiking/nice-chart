@@ -6,7 +6,7 @@
   </view>
 
   <view class='to_coupon_content'>
-    <view class='to_coupon'>我的优惠券 ></view>
+    <view class='to_coupon' bindtap="toMyCoupon">我的优惠券 <image src='../../../images/home/right_white.png' mode="widthFix" class='right'></image></view>
   </view>
 
   <view class='turntable'>
@@ -19,7 +19,10 @@
     <view class='num_6 {{scrollCurrent == 6 ? "active" : ""}}'>6</view>
     <view class='num_7 {{scrollCurrent == 7 ? "active" : ""}}'>7</view>
     <view class='num_8 {{scrollCurrent == 8 ? "active" : ""}}'>8</view>
-    <view class='num_9' bindtap='begin'>开始</view>
+    <view class='num_9' bindtap='begin'>
+      <view>开始</view>
+      <view>抽奖</view>
+    </view>
   </view>
 
 
@@ -35,11 +38,12 @@
         current = "{{current}}"
         vertical='{{vertical}}'
         class='swiper_now'
+        bindchange = 'bindchange'
         > 
-        <block wx:for="{{bannerList}}" wx:for-item='item' wx:key="index">
+        <block wx:for="{{messageCont}}" wx:for-item='item' wx:key="index">
           <swiper-item class="item_swiper" catchtouchmove="stopTouchMove">
-              <view>{{item.text}}</view>
-              <view>{{item.text}}</view>
+              <view>{{item[0].user_name}}抽到了{{item[0].coupons_name}}</view>
+              <view>{{item[1].user_name}}抽到了{{item[1].coupons_name}}</view>
           </swiper-item>
         </block>
       </swiper>

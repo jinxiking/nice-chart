@@ -108,6 +108,15 @@ page{
 .num_9{
   top:237rpx;
   left:237rpx;
+  background:linear-gradient(311deg,rgba(254,27,66,1) 0%,rgba(250,123,59,1) 100%)!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.num_9 view{
+  font-size: 48rpx;
+  color:#fff;
 }
 
 .winning{
@@ -136,4 +145,9 @@ page{
 }
 .active{
   background: red!important;
+}
+.right{
+  width: 25rpx;
+  position: relative;
+  top:2rpx;
 }

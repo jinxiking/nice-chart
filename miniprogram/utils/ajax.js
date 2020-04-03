@@ -1,11 +1,12 @@
 const app = getApp();
 const ajax = (option) =>{
   var token = app.globalData.token;
-
-  wx.showLoading({
-    title: '加载中',
-  })
-  console.log(app.globalData)
+  if(!option.noLoading){
+    wx.showLoading({
+      title: '加载中',
+    })
+  }
+  
   let header = {
     token: token,
     lat : app.globalData.latitude,

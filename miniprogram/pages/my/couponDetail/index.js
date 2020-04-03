@@ -1,11 +1,12 @@
 // miniprogram/pages/my/couponDetail/index.js
+const util = require('../../../utils/ajax.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    shopList : [
+    typeList : [
       {
         name : '未消费'
       },
@@ -13,68 +14,90 @@ Page({
         name : '已消费'
       }
     ],
+    shopList : [
+    
+    ],
     current : 0,
+    page : {
+      page : 1,
+      pageSize : 10
+    },
+    finish : false,
+    id : ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // let id = options.id
+    let id = 3;
+    this.setData({
+      id : id
+    })
+    this.getList(id);
   },
+  getList(){
+    util.ajax({
+      url: '/v1/shopcoupons/'+this.data.page.page+'/' + this.data.page.pageSize + '/' + this.data.id + '/' + (parseInt(this.data.current) + 1),
+      method: 'GET',
+      data : {
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+      },
+      success: (res) => {
+        let list = this.data.shopList.concat(res.data.list)
+        this.setData({
+          shopList: list
+        })
 
-  },
+        
+        if (res.data.total == 0 || res.data.total  == this.data.page.page){
+          this.setData({
+            finish : true
+          })
+        }
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+      }
+    })
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(this.data.finish){
+      return;
+    }
+    let num = this.data.page.page;
+    this.setData({
+      page : {
+        page : num + 1,
+        pageSize : 10
+      }
+    })
+    this.getList();
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+  getTime(){
 
   },
   changTab(e){
+    this.setData({
+      shopList : [],
+      finish : false,
+      page : {
+        page : 1,
+        pageSize : 10
+      }
+    })
     let id = e.currentTarget.id;
     this.setData({
       current: id
     })
+    this.getList();
   },
+  toHome(){
+    wx.switchTab({
+      url: '/pages/home/index/index',
+    })
+  }
 })

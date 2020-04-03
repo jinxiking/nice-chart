@@ -1,45 +1,37 @@
 <!--miniprogram/pages/my/couponDetail/index.wxml-->
+<wxs module="filter" src="../../../utils/public.wxs"></wxs>
 <view  class='tab_cont'>
-  <view wx:for='{{shopList}}' wx:key='index' id='{{index}}' class='tap_item {{current == index?"active":""}}' bindtap='changTab'>{{item.name}}</view>
+  <view wx:for='{{typeList}}' wx:key='index' id='{{index}}' class='tap_item {{current == index?"active":""}}' bindtap='changTab'>{{item.name}}</view>
 </view>
 <view class='contenter'>
   <view class='scroll_content'> 
     
-    <view class='card_item'>
+    <view class='card_item' wx:for='{{shopList}}' wx:key='index'>
       <image src='../../../images/my/coupon_bg.png' mode="widthFix" class='coupon_bg'></image>
       <view class='card_top'>
+          <image src='../../../images/my/isused.png' mode="widthFix" class='isused' wx:if='{{current == 1}}'></image>
           <view class='card_left'>
-              7折
+              <image src='../../../images/home/shop.png' mode="widthFix" class='left_img'></image>
           </view>
           <view class='card_right'>
-            <view class='card_right_top'>生鲜水果优惠券</view>
-            <view class='card_right_bottom'>适用于：生鲜水果</view>
+            <view class='card_right_top'>{{item.title}}</view>
+            <view class='card_right_bottom'>{{item.name}}</view>
           </view>
-          <view class='button'>立即使用</view>
+          <view class='button used' wx:if='{{current == 1}}'>已使用</view>
+          <view class='button' wx:if='{{current != 1}}'>立即使用</view>
       </view>
       <view class='card_bottom'>
-        有效期至:2020-04-25
+        有效期至:{{filter.formatDate(item.end_time,"YY-MM-DD")}}
       </view>
       
     </view>
 
-    <view class='card_item'>
-      <image src='../../../images/my/coupon_bg.png' mode="widthFix" class='coupon_bg'></image>
-      <view class='card_top'>
-          <view class='card_left'>
-              7折
-          </view>
-          <view class='card_right'>
-            <view class='card_right_top'>生鲜水果优惠券</view>
-            <view class='card_right_bottom'>适用于：生鲜水果</view>
-          </view>
-          <view class='button'>立即使用</view>
-      </view>
-      <view class='card_bottom'>
-        有效期至:2020-04-25
-      </view>
-      
+    <view class='nolist_content'>
+      <image src='../../../images/my/no_coupon.png' mode="widthFix" class='no_coupon'></image>
+      <view>暂无优惠券</view>
+      <view class='tobay' bindtap="toHome">麻溜~去抢购</view>
     </view>
+    
 
     
   </view>

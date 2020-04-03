@@ -1,90 +1,102 @@
 <!--miniprogram/pages/my/activeDetail/index.wxml-->
-<view class='content'>
-  <view class='top'>
-    <image src='../../../images/my/detail_bg.png' mode="widthFix" class='detail_bg'></image>
-    <view class='active_name'> 
-      {{detailTop.title}}
-    </view>
 
-    <view class='active_detail'>
-      <view>
-        <view class='active_num'>{{detailTop.total}}</view>
-        <view class='active_dro'>总数</view>
-      </view>
-
-      <view>
-        <view class='active_num'>{{detailTop.receive}}</view>
-        <view class='active_dro'>被获取</view>
-      </view>
-      <view>
-        <view class='active_num'>{{detailTop.use}}</view>
-        <view class='active_dro'>已消费</view>
-      </view>
-
-      <view>
-        <view class='active_num'>{{detailTop.notUse}}</view>
-        <view class='active_dro'>未消费</view>
-      </view>
-      
-    </view>
+<view class='top'>
+  <view class='active_name'> 
+    <!-- {{detailTop.title}} -->
+    5号店铺
   </view>
 
-  <view class='active_list'>
-    <view class='time_picker'>
-      <picker bindchange="bindStartDate" value="{{searchDateStart}}"  mode="date" class='time'>
-        <view class="picker">
-          <text wx:if='{{searchDateStart == ""}}'>选择开始时间</text>
-          <text wx:else='{{searchDateStart != ""}}'>{{searchDateStart}}</text>
+  <view class='active_detail'>
+    <view>
+      <view class='active_num'>{{detailTop.total}}</view>
+      <view class='active_dro'>总数</view>
+    </view>
 
-        </view>
-      </picker>
-      <view class='to'>--</view>
-      
-      <picker bindchange="bindEndDate" value="{{searchDateEnd}}"  mode="date" class='time'>
+    <view>
+      <view class='active_num'>{{detailTop.receive}}</view>
+      <view class='active_dro'>被获取</view>
+    </view>
+    <view>
+      <view class='active_num'>{{detailTop.use}}</view>
+      <view class='active_dro'>已消费</view>
+    </view>
+
+    <view>
+      <view class='active_num'>{{detailTop.notUse}}</view>
+      <view class='active_dro'>未消费</view>
+    </view>
+    
+  </view>
+</view>
+
+
+<view class='time_picker'>
+  <view>开始时间</view>
+  <picker bindchange="bindStartDate" value="{{searchDateStart}}"  mode="date" class='time'>
+      <view class="picker">
+        <text wx:if='{{searchDateStart == ""}}'>选择开始时间</text>
+        <text wx:else='{{searchDateStart != ""}}'>{{searchDateStart}}</text>
+        <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
+      </view>
+  </picker>
+</view>
+<view class='line'></view>
+<view class='time_picker'>
+  <view>结束时间</view>
+    <picker bindchange="bindEndDate" value="{{searchDateEnd}}"  mode="date" class='time'>
         <view class="picker">
           <text wx:if='{{searchDateEnd == ""}}'>选择结束时间</text>
           <text wx:else='{{searchDateEnd != ""}}'>{{searchDateEnd}}</text>
+          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
+      </view>
+  </picker>
+</view>
 
-        </view>
-      </picker>
+<view class='time_picker typePiker'>
+    <view>筛选</view>
+    <picker bindchange="bindShopPicker" value="{{shopIndex}}" range="{{shopListRealArr}}" class='shopPiker' bindchange='bindpikerChange'>
+      <view class="shopPikerShow">
+        <view class='type_name'>{{shopListRealArr[shopIndex]}}</view>
+        
+        <view class='triangle-down'></view>
+      </view>
+    </picker>
+</view>
 
-      <picker bindchange="bindShopPicker" value="{{shopIndex}}" range="{{shopListRealArr}}" class='shopPiker'>
-        <view class="shopPikerShow">
-          未消费
-          <view class='triangle-down'></view>
-        </view>
-      </picker>
-    </view>
-  
-  </view>
+<view class='content'>
 
   <view class='detail_content'>
     <view class='table_item f23'>  
-      <text class='line_1'>2020-20-20</text>
-      <text>818</text>
-      <text>未消费</text>
-      <text>未消费</text>
+      <view>
+        <view class='ft26'>818</view>
+        <view>未消费</view>
+      </view>
+      <view>
+        <view class='none_view'></view>
+        <view class='line_1'>2020-20-20</view>
+      </view>
     </view>
 
     <view class='table_item f23'>  
-      <text class='line_1'>2020-20-20</text>
-      <text>818</text>
-      <text>未消费</text>
-      <text>未消费</text>
+      <view>
+        <view class='ft26'>818</view>
+        <view>未消费</view>
+      </view>
+      <view>
+        <view class='none_view'></view>
+        <view class='line_1'>2020-20-20</view>
+      </view>
     </view>
 
     <view class='table_item f23'>  
-      <text class='line_1'>2020-20-20</text>
-      <text>818</text>
-      <text>未消费</text>
-      <text>未消费</text>
-    </view>
-
-    <view class='table_item f23'>  
-      <text class='line_1'>2020-20-20</text>
-      <text>818</text>
-      <text>未消费</text>
-      <text>未消费</text>
+      <view>
+        <view class='ft26'>818</view>
+        <view>未消费</view>
+      </view>
+      <view>
+        <view class='none_view'></view>
+        <view class='line_1'>2020-20-20</view>
+      </view>
     </view>
   </view>
 

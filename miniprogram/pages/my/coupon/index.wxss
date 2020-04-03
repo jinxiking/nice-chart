@@ -6,6 +6,12 @@
     border-bottom: 1rpx solid #F5F5F5;
 }
 
+.right{
+  width: 25rpx;
+  position: relative;
+  top:2rpx;
+}
+
 .item_cont{
   display: flex;
   position: relative;

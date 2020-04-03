@@ -1,18 +1,19 @@
 {
   "pages": [
     "pages/home/index/index",
-    "pages/my/index/index",
-
     "pages/my/question/index",
+
     "pages/my/activeDetail/index",
+  
+    "pages/active/index/index",
+    "pages/my/couponDetail/index",
+    "pages/my/coupon/index",
+    "pages/my/index/index",
+    
     "pages/my/activeList/index",
     "pages/my/mesCenter/index",
     "pages/my/mesDetail/index",
     "pages/home/login/index",
-    "pages/my/couponDetail/index",
-    "pages/active/index/index",
-    "pages/my/coupon/index",
-
     "pages/home/detail/index",
     "pages/my/questionDetail/index"
   ],

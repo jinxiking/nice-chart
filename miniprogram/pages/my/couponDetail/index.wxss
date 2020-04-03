@@ -111,3 +111,35 @@
   justify-content: center;
   align-items: center;
 }
+
+.left_img{
+  width:94rpx;
+  height:94rpx;
+  margin-top: 35rpx;
+  z-index: 5;
+}
+.used{
+  background: #999999!important;
+}
+.isused{
+  position: absolute;
+  width:132rpx;
+  height:132rpx;
+  z-index: 200;
+  left:14rpx;
+  top:15rpx;
+}
+.no_coupon{
+  width: 340rpx;
+  height: 340rpx;
+
+}
+.nolist_content{
+  text-align: center;
+  color:#9DA3B4;
+  font-size: 28rpx;
+}
+.tobay{
+  margin-top:20rpx;
+  color:#FE1B42;
+}

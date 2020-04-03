@@ -129,3 +129,16 @@ page{
 .right{
   width: 18rpx;
 }
+.nolist{
+  width: 340rpx;
+  height: 340rpx;
+}
+.no_list_content{
+  margin-top: 40rpx;
+  text-align: center;
+}
+.no_list_text{
+  margin-top: 20rpx;
+  color:#9DA3B4;
+  font-size: 28rpx;
+}

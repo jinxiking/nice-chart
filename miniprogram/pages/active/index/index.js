@@ -1,4 +1,5 @@
 // miniprogram/pages/active/index/index.js
+const util = require('../../../utils/ajax.js');
 let timer = '';
 Page({
 
@@ -10,27 +11,7 @@ Page({
     current : 1,
     scrollCurrent : 1,
     bannerList : [
-      {
-        text : '1'
-      }, 
-      {
-        text: '2'
-      },
-      {
-        text: '3'
-      },
-      {
-        text: '4'
-      },
-      {
-        text: '5'
-      },
-      {
-        text: '6'
-      },
-      {
-        text: '7'
-      }
+     
     ],
     indicatorDots: false,
     vertical: true,
@@ -39,6 +20,13 @@ Page({
     interval: 2000,
     duration: 500,
     current: 0,
+    page : {
+      page : 1,
+      pageSize : 20
+    },
+    messageCont : [
+
+    ]
   },
 
   /**
@@ -46,55 +34,66 @@ Page({
    */
   onLoad: function (options) {
     this.scroller();
+    this.getActives();
+    this.getBottom();
   },  
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getBottom(){
+    util.ajax({
+      url: '/v1/messages/'+this.data.page.page+'/' + this.data.page.pageSize,
+      method: 'GET',
+      data : {
+         
+      },
+      noLoading : true,
+      success: (res) => {
+        let list = this.data.messageCont
+        if(res.data.list.length == 0){
+          return;
+        }
+        for(var i = 0;i<=res.data.list.length;i++){
+          if(i%2 == 1 ){
+            list.push(
+              [res.data.list[i],res.data.list[i-1]]
+            )
+          }
+        }
+        this.setData({
+          messageCont :list
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  bindchange(r){
+    if(r.detail.current == (this.data.messageCont.length - 5)){
+      if(this.data.finish){
+        return;
+      }
+      let num = this.data.page.page;
+      this.setData({
+        page : {
+          page : num + 1,
+          pageSize : 20
+        }
+      })
+      this.getBottom()
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  toMyCoupon(){
+    wx.navigateTo({
+      url: '/pages/my/coupon/index',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  getActives(){
+    util.ajax({
+      url: '/v1/campaigns',
+      method: 'GET',
+      data : {
+         
+      },
+      success: (res) => {
+        console.log(res)
+      }
+    })
   },
   scroller(){
 
