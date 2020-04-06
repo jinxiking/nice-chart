@@ -1,4 +1,17 @@
 /* miniprogram/pages/my/activeDetail/index.wxss */
+.nolist{
+  width: 340rpx;
+  height: 340rpx;
+}
+.no_list_content{
+  margin-top: 40rpx;
+  text-align: center;
+}
+.no_list_text{
+  margin-top: 20rpx;
+  color:#9DA3B4;
+  font-size: 28rpx;
+}
 .content{
   padding:24rpx 0rpx;
 }
@@ -144,8 +157,8 @@
 
 .detail_content{
   background: #fff;
-  min-height:400rpx;
   padding-top:24rpx;
+  padding-bottom:24rpx;
 }
 
 

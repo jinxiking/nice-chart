@@ -11,20 +11,22 @@
 
   <view class='turntable'>
     <image src='../../../images/active/zhuanpan_bg.png' class='mid_bg'></image>
-    <view class='num_1 {{scrollCurrent == 1 ? "active" : ""}}' >1</view>
-    <view class='num_2 {{scrollCurrent == 2 ? "active" : ""}}'>2</view>
+    <view  wx:for='{{list}}' wx:key='index' class='num_{{index+1}} {{scrollCurrent == (index+1) ? "active" : ""}}'>
+      <image src='{{item.logo}}' class='active_img'></image>
+    </view>
+    <!-- <view class='num_2 {{scrollCurrent == 2 ? "active" : ""}}'>2</view>
     <view class='num_3 {{scrollCurrent == 3 ? "active" : ""}}'>3</view>
     <view class='num_4 {{scrollCurrent == 4 ? "active" : ""}}'>4</view>
     <view class='num_5 {{scrollCurrent == 5 ? "active" : ""}}'>5</view>
     <view class='num_6 {{scrollCurrent == 6 ? "active" : ""}}'>6</view>
     <view class='num_7 {{scrollCurrent == 7 ? "active" : ""}}'>7</view>
-    <view class='num_8 {{scrollCurrent == 8 ? "active" : ""}}'>8</view>
-    <view class='num_9' bindtap='begin'>
-      <view>开始</view>
+    <view class='num_8 {{scrollCurrent == 8 ? "active" : ""}}'>8</view> -->
+    <view class='num_9 {{isExists?"bgg":""}}' bindtap='begin'>
+      <view>{{isExists?'已经':'开始'}}</view>
       <view>抽奖</view>
     </view>
   </view>
-
+  
 
   <view class='winning'>
   
@@ -49,9 +51,8 @@
       </swiper>
     
   </view>
+</view>
 
-  
-
-
-
+<view class='shak' hidden="{{shak_show}}" bindtap="closeShak">
+    <image src='{{recoard.logo}}' mode="widthFix" class='shak_img'></image>
 </view>

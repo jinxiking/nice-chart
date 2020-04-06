@@ -1,15 +1,16 @@
 <!--miniprogram/pages/my/index/index.wxml-->
 <view class='my_top'>
-  <view class='scan'>
+  <view class='scan' wx:if='{{detail.is_shop == 1}}' bindtap="toScan">
    
   </view>
-  <view class='scan_action'>
+  <view class='scan_action' bindtap="toScan">
     <image src='../../../images/my/scan.png' mode="widthFix" class='scan_img'></image>
     <text class='sacn_text'>扫一扫</text>
   </view>
 
   <view class='user'> 
-    <image src='../../../images/home/shop.png' mode="widthFix" class='user_img'></image>
+
+    <image src='{{detail.icon}}' mode="widthFix" class='user_img'></image>
   </view>
 
   <view class='user_name'> 
@@ -34,12 +35,11 @@
   </view>
 
 
-
 </view>
 
 <view class='my_cont'>
   <view class='card'> 
-    <view class='card_item' bindtap="toActive">
+    <view class='card_item' bindtap="toActive"  wx:if='{{detail.is_shop == 1}}'>
       <view class='card_left'>
         <image src='../../../images/my/icon_1.png' mode="widthFix" class='icon_img_1'></image>
         <text class='card_name'>我的活动</text>
@@ -94,7 +94,7 @@
       </view>
     </view>
 
-    <view class='card_item'>
+    <view class='card_item' bindtap="toBusiness">
       <view class='card_left'>
         <image src='../../../images/my/icon_5.png' mode="widthFix" class='icon_img_1'></image>
         <text class='card_name'>商务合作微信：xxxxx</text>
@@ -106,4 +106,11 @@
     </view>
   </view>
 
+</view>
+
+
+<view class="page">
+    <mp-dialog title="提示" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+        <view>{{title}}</view>
+    </mp-dialog>
 </view>

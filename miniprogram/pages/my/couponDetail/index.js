@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    shak_show : true,
+    imgPath : '',
     typeList : [
       {
         name : '未消费'
@@ -24,6 +26,25 @@ Page({
     },
     finish : false,
     id : ''
+  },
+  closeShak(){
+    this.setData({
+      shak_show : true,
+    })
+  },
+  userAction(e){
+ 
+    
+    var item = this.data.shopList[e.currentTarget.dataset.vindex];
+    if(item.end_int == 1){
+      return
+    }else{
+     
+      this.setData({
+        shak_show : false,
+        imgPath : item.name
+      })
+    }
   },
 
   /**

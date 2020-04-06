@@ -9,7 +9,7 @@ Page({
     activeList : [],
     page : {
       page : 1,
-      pageSize : 10
+      pageSize : 20
     },
     finish : false
   },
@@ -68,7 +68,7 @@ Page({
     this.setData({
       page : {
         page : num + 1,
-        pageSize : 10
+        pageSize : 20
       }
     })
     this.getActiveList();

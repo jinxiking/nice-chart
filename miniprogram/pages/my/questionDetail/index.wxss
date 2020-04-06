@@ -1,1 +1,69 @@
 /* miniprogram/pages/my/questionDetail/index.wxss */
+.content{
+  padding: 28rpx 32rpx;
+  background: #fff;
+}
+.right{
+  width: 24rpx;
+}
+.relative_title{
+  position: relative;
+}
+.text_num{
+  font-weight: 400;
+  position: relative;
+  z-index: 10;
+  color:#fff;
+  font-size:25rpx;
+  margin-left: 8rpx;
+  text-align: center;
+}
+.content_title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:30rpx;
+  font-family:PingFang-SC-Bold,PingFang-SC;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+}
+.text_title{
+  margin-left: 32rpx;
+ 
+}
+.que_bg{
+  width: 50rpx;
+  top:2rpx;
+  position: absolute;
+  z-index: 1;
+}
+.dro_content{
+  font-size:30rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  margin-top: 24rpx;
+}
+.bottom_line{
+  border-bottom: 1rpx solid #F5F5F5;
+  margin-bottom: 30rpx;
+  padding-bottom: 30rpx;
+  max-height: 38rpx;
+  overflow: hidden;
+  transition: all ease 0.5s;
+}
+.bottom_line .right{
+  transition: all ease 0.5s;
+  transform : rotate(180deg);
+}
+.no_line{
+  border: none;
+  margin-bottom: 0;
+}
+.active{
+  max-height: 300rpx!important;
+
+}
+.active .right{
+  transform : rotate(0deg);
+}

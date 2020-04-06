@@ -1,2 +1,21 @@
 <!--miniprogram/pages/my/questionDetail/index.wxml-->
-<text>miniprogram/pages/my/questionDetail/index.wxml</text>
+<view class='content'>
+  <view class='bottom_line {{item.active?"active":""}} {{index == (mesList.length - 1)?"no_line":""}}' bindtap='setInde' wx:for='{{mesList}}' wx:key='index' data-vindex="{{index}}">
+    <view class='content_title'> 
+      <view class='relative_title'>
+          <image src='../../../images/my/ques_icon.png' mode="widthFix" class='que_bg'></image>
+          <text class='text_num'>Q{{index + 1}}</text>
+
+          <text class='text_title'>{{item.title}}</text>
+      </view>
+      <view>
+        <image src='../../../images/my/top_throw.png' mode="widthFix" class='right'></image>
+      </view>
+    </view>
+
+    <view class='dro_content'>
+      {{item.content}}
+    </view>
+
+  </view>
+</view>

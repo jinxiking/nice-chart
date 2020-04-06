@@ -60,7 +60,7 @@ Page({
    */
   onLoad: function (options) {
     // console.log(options.id);
-    let id = 38;
+    let id = options.id;
     this.setData({
       id : id
     })
@@ -85,12 +85,12 @@ Page({
          
       },
       success: (res) => {
+   
         let list = this.data.list.concat(res.data.list)
         this.setData({
           list: list
         })
 
-        
         if (res.data.total == 0 || res.data.total  == this.data.page.page){
           this.setData({
             finish : true

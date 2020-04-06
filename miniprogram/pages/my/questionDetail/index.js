@@ -5,9 +5,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    current : 0,
+    mesList : [
+      {
+        title : '常见问题1',
+        content : '阿松大沙发沙发沙发沙发沙发沙发沙发沙发',
+        active : false,
+      },
+      {
+        title : '常见问题2',
+        content : '阿松大沙发沙发沙发沙发沙发沙发沙发沙发',
+        active : false,
+      },
+      {
+        title : '常见问题3',
+        content : '阿松大沙发沙发沙发沙发沙发沙发沙发沙发阿松大沙发沙发沙发沙发沙发沙发沙发沙发',
+        active : false,
+      },
+      {
+        title : '常见问题4',
+        content : '阿松大沙发沙发沙发沙发沙发沙发沙发沙发阿松大沙发沙发沙发沙发沙发沙发沙发沙发',
+        active : false,
+      },
+      {
+        title : '常见问题5',
+        content : '阿松大沙发沙发沙发沙发沙发沙发沙发沙发阿松大沙发沙发沙发沙发沙发沙发沙发沙发',
+        active : false,
+      },
+    ]
   },
-
+  setInde(e){
+    let list = this.data.mesList;
+    list[e.currentTarget.dataset.vindex].active = !list[e.currentTarget.dataset.vindex].active;
+    this.setData({
+      mesList : list
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

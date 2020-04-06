@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "count-down": "/components/coutDown/index"
+  },
   "navigationBarTitleText": "抢购详情"
+  
 }

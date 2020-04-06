@@ -1,0 +1,2 @@
+<!--components/coutDown/index.wxml-->
+<text class="c-class">{{time}}</text>

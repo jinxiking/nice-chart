@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "navBar": "/components/navBar/navBar"
+    "navBar": "/components/navBar/navBar",
+    "count-down": "/components/coutDown/index"
   }
 }

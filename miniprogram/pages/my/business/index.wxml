@@ -1,0 +1,22 @@
+<!--miniprogram/pages/my/business/index.wxml-->
+<view class='content'>
+  <view class='card'>
+    <view class='card_title'>
+      <image src='{{detail.logo}}' mode="widthFix" class='title_img'></image>
+      <view>
+        <view class='chat_name'>{{detail.title}}</view>
+        <view class='chat_num'>{{detail.remark}}</view>
+      </view>
+    </view>
+
+
+    <view class='chat_scan'>
+      <image src='{{detail.url}}' mode="widthFix" class='chat_scan_img'></image>
+    </view>
+  </view>
+
+  <view class='button' bindtap="saveImg">
+    保存到相册
+  </view>
+</view>
+

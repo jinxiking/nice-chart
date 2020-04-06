@@ -14,7 +14,22 @@ page{
   height: 32rpx!important;
  
 }
-
+.number_line{
+  width: 240rpx;
+  height: 12rpx;
+  border-radius: 6rpx;
+  background: #F5F5F5;
+  margin-top:8rpx ;
+  position: relative;
+  overflow: hidden;
+}
+.line_content{
+  position: absolute;
+  height:12rpx;
+  background:linear-gradient(270deg,rgba(254,27,66,1) 0%,rgba(250,123,59,1) 100%);
+  width: 50%;
+  border-radius: 6rpx;
+}
 .swiper-item{
   width: 100%;
 }
@@ -83,7 +98,7 @@ page{
 .shop_num{
   color:#E0361C;
   font-size:24rpx;
-  margin-top: 50rpx;
+  margin-top: 40rpx;
 }
 .shop_time{
   color:#F48B53;
@@ -128,6 +143,9 @@ page{
 }
 .right{
   width: 18rpx;
+}
+.backg{
+  background: #999999!important;
 }
 .nolist{
   width: 340rpx;

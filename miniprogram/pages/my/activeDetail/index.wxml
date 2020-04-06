@@ -66,10 +66,10 @@
 <view class='content'>
 
   <view class='detail_content'>
-    <view class='table_item f23'>  
+    <view class='table_item f23' wx:for='{{list}}' wx:key='index'>  
       <view>
-        <view class='ft26'>818</view>
-        <view>未消费</view>
+        <view class='ft26'>{{item.user_name}}</view>
+        <view>{{item.status == 1?'未消费':'已消费'}}</view>
       </view>
       <view>
         <view class='none_view'></view>
@@ -77,27 +77,11 @@
       </view>
     </view>
 
-    <view class='table_item f23'>  
-      <view>
-        <view class='ft26'>818</view>
-        <view>未消费</view>
-      </view>
-      <view>
-        <view class='none_view'></view>
-        <view class='line_1'>2020-20-20</view>
-      </view>
+    <view class='no_list_content' wx:if='{{!list.length}}'>
+      <image src='../../../images/empty/nolist.png' class='nolist'></image>
+      <view class='no_list_text'>暂无活动详情，改变时间试试？</view>
     </view>
 
-    <view class='table_item f23'>  
-      <view>
-        <view class='ft26'>818</view>
-        <view>未消费</view>
-      </view>
-      <view>
-        <view class='none_view'></view>
-        <view class='line_1'>2020-20-20</view>
-      </view>
-    </view>
   </view>
 
 </view>

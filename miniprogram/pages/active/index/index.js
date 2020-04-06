@@ -1,12 +1,17 @@
 // miniprogram/pages/active/index/index.js
 const util = require('../../../utils/ajax.js');
+let mytag = false;
 let timer = '';
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    shak_show : true,
+    imgPath : '',
+    recoard : {},
+    isExists : true,
+    luckCode : '',
     list : [1,2,3,4,5,6,7,8],
     current : 1,
     scrollCurrent : 1,
@@ -37,6 +42,11 @@ Page({
     this.getActives();
     this.getBottom();
   },  
+  closeShak(){
+    this.setData({
+      shak_show : true,
+    })
+  },
   getBottom(){
     util.ajax({
       url: '/v1/messages/'+this.data.page.page+'/' + this.data.page.pageSize,
@@ -91,7 +101,11 @@ Page({
          
       },
       success: (res) => {
-        console.log(res)
+       this.setData({
+        list : res.data.list,
+        luckCode : res.data.luckCode,
+        isExists : res.data.isExists
+       })
       }
     })
   },
@@ -102,15 +116,42 @@ Page({
     return false;
   },
   begin(){
-    let randomNum = 40 + Math.floor(Math.random() * (1 - 8) + 8);
-    wx.showToast({
-      title: '奖品是' + (randomNum - 40),
-      icon: 'success',
-      duration: 2000
+
+    if(mytag || this.data.isExists){
+      return;
+    }
+    mytag = true;
+    //请求中将接口
+    util.ajax({
+      url: '/v1/start/campaign/' + this.data.luckCode,
+      method: 'GET',
+      data : {
+        
+      },
+      success: (res) => {
+        console.log(res.data.campaign_id)
+        if(res.data.campaign_id === 0){
+          res.data.campaign_id = -1
+        }
+        let num = 0;
+        for(var i = 0;i<this.data.list.length;i++){
+          console.log(this.data.list[i])
+          if(this.data.list[i].campaign_id == res.data.campaign_id){
+            this.setData({
+              recoard : this.data.list[i]
+            })
+            num = 40 + i + 1;
+          }
+
+        }
+
+        this.interval(num);
+        
+      }
     })
-    this.interval(randomNum);
   },
   interval(randomNum){
+    console.log(randomNum)
     let _this = this;
     let num = 0;
     let sum = 0;
@@ -165,7 +206,9 @@ Page({
                       if (cont == randomNum) {
                         clearInterval(timer);
                         //减速第六层循环
-                        
+                        _this.setData({
+                          shak_show : false
+                        })
 
                       }
                       _this.setData({

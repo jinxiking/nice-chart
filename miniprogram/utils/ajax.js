@@ -29,20 +29,23 @@ const ajax = (option) =>{
         option.success(res.data);
       } else if (res.data.code == 1001){
         //重新登录流程
-        app.doLogin(ajax,option);
+        app.doLogin();
       }else{
         wx.showToast({
-          title: res.data.message,
+          title: res.data.msg,
           icon: 'none',
           duration: 2000
         })
+        if(option.fali){
+          option.fali(res.data)
+        }
       }
     },
     complete:(res)=>{
       wx.hideLoading();
     },
     fail : ()=>{
-    
+      
     }
 
   })

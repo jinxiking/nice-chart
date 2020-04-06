@@ -2,7 +2,7 @@
 <view class='item_list' wx:for='{{list}}' wx:key='index'>
     <view class='item_cont' bindtap="toDetail" data-vid="{{item.id}}">
       <view>
-        <image src='../../../images/home/shop.png' mode="widthFix" class='card_img'></image>
+        <image src='{{item.logo}}' mode="widthFix" class='card_img'></image>
       </view>
       <view class='item_right'>
         <view class='name'>{{item.name}}</view>

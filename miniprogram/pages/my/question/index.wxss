@@ -70,7 +70,7 @@
 
 .upload_content{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .upload_item{
@@ -81,7 +81,26 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  margin-right: 20rpx;
 }
+.close{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top:-20rpx;
+  right:-20rpx;
+}
+.uploadPath{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 100;
+}
+
+
 
 .icon_img{
   width: 52rpx;

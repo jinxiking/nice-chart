@@ -28,32 +28,38 @@
   <view class='content_title mt20'>添加图片<text class='content_tips'>（选填）</text></view>
 
   <view class='upload_content'>
-      <view class='upload_item' bindtap="uploadImg">
-          <view class='img_cont'>
+      <view class='upload_item' bindtap="uploadImg" data-vindex="0">
+          <image src='../../../images/my/close.png' class='close' wx:if='{{imgList.length != 0}}' data-vindex="0" catchtap="delImg"></image>
+          <image src='{{imgList[0].showPath}}' class='uploadPath'></image>
+          <view class='img_cont' wx:if='{{imgList.length == 0}}'>
             <image src='../../../images/my/upload.png' mode="widthFix" class='icon_img'></image>
           </view>
-          <view class='text_cont'>
-            0 / 3
-          </view>
-      </view>
-<!-- 
-      <view class='upload_item'>
-          <view class='img_cont'>
-            <image src='../../../images/my/upload.png' mode="widthFix" class='icon_img'></image>
-          </view>
-          <view class='text_cont'>
-            0 / 3
+          <view class='text_cont' wx:if='{{imgList.length == 0}}'>
+            {{imgList.length}} / 3
           </view>
       </view>
 
-      <view class='upload_item'>
-          <view class='img_cont'>
+      <view class='upload_item' wx:if='{{imgList.length >= 1}}' bindtap="uploadImg" data-vindex="1">
+          <image src='{{imgList[1].showPath}}'  class='uploadPath'></image>
+          <image src='../../../images/my/close.png' class='close' wx:if='{{imgList.length > 1}}' data-vindex="1" bindtap="delImg"></image>
+          <view class='img_cont' wx:if='{{imgList.length <= 1}}'>
             <image src='../../../images/my/upload.png' mode="widthFix" class='icon_img'></image>
           </view>
-          <view class='text_cont'>
-            0 / 3
+          <view class='text_cont' wx:if='{{imgList.length <= 1}}'>
+            {{imgList.length}} / 3
           </view>
-      </view> -->
+      </view>
+
+      <view class='upload_item' wx:if='{{imgList.length >= 2}}'  bindtap="uploadImg" data-vindex="2">
+          <image src='{{imgList[2].showPath}}' class='uploadPath'></image>
+          <image src='../../../images/my/close.png' class='close' wx:if='{{imgList.length == 3}}' data-vindex="2" catchtap="delImg"></image>
+          <view class='img_cont' wx:if='{{imgList.length <= 2}}'>
+            <image src='../../../images/my/upload.png' mode="widthFix" class='icon_img'></image>
+          </view>
+          <view class='text_cont' wx:if='{{imgList.length <= 2}}'>
+            {{imgList.length}} / 3
+          </view>
+      </view>
   </view>
 
   
@@ -66,7 +72,7 @@
 </view>
 
 <view class='submit_cont'>
-  <view class='button'>
+  <view class='button' bindtap="submit">
     提交
   </view>
 </view>

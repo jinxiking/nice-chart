@@ -1,0 +1,50 @@
+/* miniprogram/pages/my/business/index.wxss */
+.content{
+  padding:32rpx;
+}
+.card{
+  background:rgba(255,255,255,1);
+  border-radius:12rpx;
+  padding: 48rpx 62rpx;
+}
+.card_title{
+  display: flex;
+  justify-content: flex-start;
+}
+.title_img{
+  width: 90rpx;
+  height: 90rpx;
+  margin-right:20rpx;
+}
+.chat_name{
+  font-size:16px;
+  font-family:PingFang-SC-Bold,PingFang-SC;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  margin-top:5rpx;
+}
+.chat_num{
+  font-size:13px;
+  font-family:PingFang-SC-Medium,PingFang-SC;
+  font-weight:500;
+  color:rgba(102,102,102,1);
+  margin-top:10rpx;
+}
+.chat_scan{
+  margin-top: 48rpx;
+}
+.chat_scan_img{
+  width: 100%;
+}
+.button{
+  background:linear-gradient(270deg,rgba(254,27,66,1) 0%,rgba(250,123,59,1) 100%);
+  height: 90rpx;
+  color:#fff;
+  line-height: 90rpx;
+  border-radius: 90rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  margin-top: 32rpx;
+}

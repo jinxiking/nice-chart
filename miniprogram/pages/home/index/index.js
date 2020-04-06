@@ -1,5 +1,5 @@
 // miniprogram/pages/home/index/index.js
-
+let mytag = true;
 const util = require('../../../utils/ajax.js');
 const app = getApp();
 Page({
@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    clearTimer : false,
+    targetTime : '',
     indicatorDots: false,
     vertical: true,
     autoplay: true,
@@ -40,7 +42,6 @@ Page({
   onLoad: function (options) {
     //需要验证是否是新用户和进行过地址授权
     
-
     // var token = ''
     var token = wx.getStorageSync('token') || '';
     console.log(token);
@@ -54,6 +55,10 @@ Page({
       this.doLogin();
     }
     
+  },
+  myLinsterner(){
+    //时间到了监听函数重新拉取
+    this.getTitle();
   },
   checkUser(){
     
@@ -133,7 +138,7 @@ Page({
                   },
                   header: {
                     'content-type': 'application/x-www-form-urlencoded', //修改此处即可
-                    token : this.globalData.token
+                    token : app.globalData.token
                   },
                   method : 'post',
                   success : (res)=>{
@@ -172,9 +177,9 @@ Page({
     // this.getBannerList();
   },
   //自定义事件
-  topDetai(){
+  topDetai(e){
     wx.navigateTo({
-      url: '/pages/home/detail/index',
+      url: '/pages/home/detail/index?id=' + e.currentTarget.dataset.vid,
     })
   },
   bindchange(index){
@@ -183,6 +188,11 @@ Page({
     })
   },
   getTitle(){
+    
+    if(!mytag){
+      return;
+    }
+    mytag = false;
     util.ajax({
       url: '/v1/seckill/title',
       method: 'GET',
@@ -194,14 +204,20 @@ Page({
         this.setData({
           dataObj : res.data
         })
+        let tag = false;
         for(var i in res.data){
           if(res.data[i] == 1){
             this.setData({
               activeIndex : i
             })
             this.getBottomList(i);
+            tag = true;
           }
         }
+        if(!tag){
+          this.getBottomList(1);
+        }
+        
       }
     })
   },
@@ -214,10 +230,19 @@ Page({
         
       },
       success: (res) => {
-        console.log(res.data)
+      
+        mytag = true;
         this.setData({
           bottomList : res.data
         })
+        let time = new Date().getTime();
+        if(res.data.length){
+          this.setData({
+            targetTime : time + res.data[0].down_time*1000
+          })
+          
+        }
+  
         
       }
     })

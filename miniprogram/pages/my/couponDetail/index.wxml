@@ -11,14 +11,14 @@
       <view class='card_top'>
           <image src='../../../images/my/isused.png' mode="widthFix" class='isused' wx:if='{{current == 1}}'></image>
           <view class='card_left'>
-              <image src='../../../images/home/shop.png' mode="widthFix" class='left_img'></image>
+              <image src='{{item.logo}}' mode="widthFix" class='left_img'></image>
           </view>
           <view class='card_right'>
             <view class='card_right_top'>{{item.title}}</view>
-            <view class='card_right_bottom'>{{item.name}}</view>
+            <view class='card_right_bottom'>{{item.remark}}</view>
           </view>
           <view class='button used' wx:if='{{current == 1}}'>已使用</view>
-          <view class='button' wx:if='{{current != 1}}'>立即使用</view>
+          <view class='button {{item.end_int == 0?"":"used"}}' wx:if='{{current != 1}}' data-vindex="{{index}}" bindtap="userAction">{{item.end_int == 0?'立即使用':'已过期'}}</view>
       </view>
       <view class='card_bottom'>
         有效期至:{{filter.formatDate(item.end_time,"YY-MM-DD")}}
@@ -26,7 +26,7 @@
       
     </view>
 
-    <view class='nolist_content'>
+    <view class='nolist_content' wx:if='{{!shopList.length}}'>
       <image src='../../../images/my/no_coupon.png' mode="widthFix" class='no_coupon'></image>
       <view>暂无优惠券</view>
       <view class='tobay' bindtap="toHome">麻溜~去抢购</view>
@@ -35,4 +35,8 @@
 
     
   </view>
+</view>
+
+<view class='shak' hidden="{{shak_show}}" bindtap="closeShak">
+    <image src='{{imgPath}}' mode="widthFix" class='shak_img'></image>
 </view>
