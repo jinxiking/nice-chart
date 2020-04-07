@@ -1,13 +1,19 @@
 
 var filter = {
   formatDate: function (date, str = "YY-MM-DD") {
+    if((date+'').length == 10){
+      date = parseInt(date + '000')
+    }
+    console.log(date)
     var newDate = getDate(date);
+    
     str = str.replace("YY", newDate.getFullYear());
     str = str.replace("MM", add0(newDate.getMonth() + 1));
     str = str.replace("DD", add0(newDate.getDate()));
     str = str.replace("hh", add0(newDate.getHours()));
     str = str.replace("mm", add0(newDate.getMinutes()));
     str = str.replace("ss", add0(newDate.getSeconds()));
+
     return str
   }
 }

@@ -101,7 +101,6 @@ Page({
   },
   formatDate(date, str = "YY-MM-DD") {
     var newDate = new Date();
- 
     str = str.replace("YY", newDate.getFullYear());
     str = str.replace("MM", this.add0(newDate.getMonth() + 1));
     str = str.replace("DD", this.add0(newDate.getDate()));

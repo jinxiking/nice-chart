@@ -33,14 +33,17 @@ Page({
 
     ]
   },
+  onShow:function(){
+    this.scroller();
+    this.getActives();
+    this.getBottom();
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.scroller();
-    this.getActives();
-    this.getBottom();
+
   },  
   closeShak(){
     this.setData({

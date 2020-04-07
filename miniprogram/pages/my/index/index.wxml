@@ -3,7 +3,7 @@
   <view class='scan' wx:if='{{detail.is_shop == 1}}' bindtap="toScan">
    
   </view>
-  <view class='scan_action' bindtap="toScan">
+  <view class='scan_action' bindtap="toScan" wx:if='{{detail.is_shop == 1}}'>
     <image src='../../../images/my/scan.png' mode="widthFix" class='scan_img'></image>
     <text class='sacn_text'>扫一扫</text>
   </view>

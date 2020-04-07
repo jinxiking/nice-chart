@@ -33,16 +33,6 @@ Page({
     bottomList : []
   },
   onShow:function(){
-
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    //需要验证是否是新用户和进行过地址授权
-    
-    // var token = ''
     var token = wx.getStorageSync('token') || '';
     console.log(token);
     // 登录过
@@ -54,7 +44,26 @@ Page({
     } else {
       this.doLogin();
     }
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    //需要验证是否是新用户和进行过地址授权
     
+    // var token = '123123xddaxxxffafa'
+
+    
+  },
+  onPageScroll: function(e) {
+    // 页面滚动时执行
+    // console.log(e.scrollTop)
+    let query = wx.createSelectorQuery();
+    query.select('#the').boundingClientRect()
+    query.select('#the').boundingClientRect((res)=>{
+      console.log(res)
+    }).exec();
   },
   myLinsterner(){
     //时间到了监听函数重新拉取
@@ -120,6 +129,7 @@ Page({
   },
   getSettings(num){
     let _this = this;
+    
     wx.getSetting({
       success : (res)=>{
         console.log(res)
@@ -200,7 +210,11 @@ Page({
         
         
       },
+      fali(res){
+        mytag = true;
+      },
       success: (res) => {
+        mytag = true;
         this.setData({
           dataObj : res.data
         })

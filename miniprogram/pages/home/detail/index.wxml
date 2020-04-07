@@ -8,7 +8,7 @@
     <view class='name'>{{detail.shop_name}}</view>
     <view class='adress'><image src='../../../images/my/adress_icon.png' mode="widthFix" class='adr_icon'></image>{{detail.shop_address}}</view>
 </view>
-<view class='card_title'>活动说明：该优惠券适用于永辉超市以下商品</view>
+<view class='card_title'>活动说明：该优惠券适用于{{detail.shop_name}}以下商品</view>
 <view class='card_content'>
   <view class='card'> 
     <image src='../../../images/my/coupon_bg.png' mode="widthFix" class='coupon_bg'></image>

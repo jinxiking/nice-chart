@@ -2,5 +2,7 @@
   "usingComponents": {
     "mp-dialog": "/components/dialog/dialog"
   },
-  "navigationBarTitleText": "个人中心"
+  "navigationBarTitleText": "个人中心",
+  "navigationBarBackgroundColor": "#FE1B42",
+  "navigationBarTextStyle": "white"
 }

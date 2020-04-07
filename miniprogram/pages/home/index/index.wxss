@@ -143,6 +143,10 @@ page{
 }
 .right{
   width: 18rpx;
+  height: 18rpx;
+}
+.timeD{
+  line-height: 180rpx!important;
 }
 .backg{
   background: #999999!important;

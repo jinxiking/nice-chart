@@ -13,27 +13,21 @@ Page({
       campaign_num : 0,
       consume_num : 0,
 
-
     },
     showOneButtonDialog: false,
     oneButton: [{text: '确定'}],
   },
-  openConfirm: function () {
-    this.setData({
-        dialogShow: true
-    })
-},
-tapDialogButton(e) {
-    this.setData({
-        dialogShow: false,
-        showOneButtonDialog: false
-    })
-},
-tapOneDialogButton(e) {
-    this.setData({
-        showOneButtonDialog: true
-    })
-},
+  tapDialogButton(e) {
+      this.setData({
+          dialogShow: false,
+          showOneButtonDialog: false
+      })
+  },
+  tapOneDialogButton(e) {
+      this.setData({
+          showOneButtonDialog: true
+      })
+  },
   onShow : function(){
     this.getDetail();
   },

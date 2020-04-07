@@ -51,8 +51,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // let id = options.id
-    let id = 3;
+    let id = options.id
+    // let id = 3;
     this.setData({
       id : id
     })
