@@ -21,8 +21,8 @@
     <view class='num_6 {{scrollCurrent == 6 ? "active" : ""}}'>6</view>
     <view class='num_7 {{scrollCurrent == 7 ? "active" : ""}}'>7</view>
     <view class='num_8 {{scrollCurrent == 8 ? "active" : ""}}'>8</view> -->
-    <view class='num_9 {{isExists?"bgg":""}}' bindtap='begin'>
-      <view>{{isExists?'已经':'开始'}}</view>
+    <view class='num_9 {{(isExists || mytag)?"bgg":""}}' bindtap='begin'>
+      <view>{{(isExists || mytag)?'已经':'开始'}}</view>
       <view>抽奖</view>
     </view>
   </view>
@@ -35,10 +35,10 @@
    
     
       <swiper
-        indicator-dots="{{indicatorDots}}" 
-        autoplay="{{autoplay}}" 
-        current = "{{current}}"
-        vertical='{{vertical}}'
+        indicator-dots="{{indicatorDotss}}" 
+        autoplay="{{autoplays}}" 
+        current = "{{currents}}"
+        vertical='{{verticals}}'
         class='swiper_now'
         bindchange = 'bindchange'
         > 

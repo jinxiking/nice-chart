@@ -1,26 +1,27 @@
 // miniprogram/pages/active/index/index.js
 const util = require('../../../utils/ajax.js');
-let mytag = false;
+// let mytag = false;
 let timer = '';
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    mytag : false,
     shak_show : true,
     imgPath : '',
     recoard : {},
     isExists : true,
     luckCode : '',
     list : [1,2,3,4,5,6,7,8],
-    current : 1,
+    currents : 1,
     scrollCurrent : 1,
     bannerList : [
      
     ],
-    indicatorDots: false,
-    vertical: true,
-    autoplay: true,
+    indicatorDotss: false,
+    verticals: true,
+    autoplays: true,
     circular: false,
     interval: 2000,
     duration: 500,
@@ -120,10 +121,13 @@ Page({
   },
   begin(){
 
-    if(mytag || this.data.isExists){
+    if(this.data.mytag || this.data.isExists){
       return;
     }
-    mytag = true;
+    this.setData({
+      mytag : true
+    })
+    
     //请求中将接口
     util.ajax({
       url: '/v1/start/campaign/' + this.data.luckCode,
@@ -132,7 +136,7 @@ Page({
         
       },
       success: (res) => {
-        console.log(res.data.campaign_id)
+        
         if(res.data.campaign_id === 0){
           res.data.campaign_id = -1
         }
@@ -150,6 +154,11 @@ Page({
 
         this.interval(num);
         
+      },
+      fali(res){
+        this.setData({
+          mytag : false
+        })
       }
     })
   },
