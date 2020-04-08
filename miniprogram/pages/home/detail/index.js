@@ -55,6 +55,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   submit(){
+    if(this.data.is_seckill == 1){
+      wx.showToast({
+        title: '已经秒杀过',
+        icon : 'none'
+      })
+      return;
+    }
+
     if(mytag){
       return;
     }

@@ -1,15 +1,17 @@
 <!--miniprogram/pages/my/coupon/index.wxml-->
-<view class='item_list' wx:for='{{list}}' wx:key='index'>
-    <view class='item_cont' bindtap="toDetail" data-vid="{{item.id}}">
-      <view>
-        <image src='{{item.logo}}' mode="widthFix" class='card_img'></image>
+<view class='contenter'>
+  <view class='item_list' wx:for='{{list}}' wx:key='index'>
+      <view class='item_cont' bindtap="toDetail" data-vid="{{item.id}}">
+        <view>
+          <image src='{{item.logo}}' mode="widthFix" class='card_img'></image>
+        </view>
+        <view class='item_right'>
+          <view class='name'>{{item.name}}</view>
+          <view class='adress'><image src='../../../images/my/adress_icon.png' mode="widthFix" class='adr_icon'></image>{{item.address}}</view>
+        </view>
+        <view class='button' catchtap="toAdress" data-latitude='{{item.lat}}' data-longitude='{{item.lng}}'>去这里<image src='../../../images/home/right_white.png' mode="widthFix" class='right'></image></view>
       </view>
-      <view class='item_right'>
-        <view class='name'>{{item.name}}</view>
-        <view class='adress'><image src='../../../images/my/adress_icon.png' mode="widthFix" class='adr_icon'></image>{{item.address}}</view>
-      </view>
-      <view class='button' catchtap="toAdress" data-latitude='{{item.lat}}' data-longitude='{{item.lng}}'>去这里<image src='../../../images/home/right_white.png' mode="widthFix" class='right'></image></view>
-    </view>
+  </view>
 </view>
 
 <view class='nolist_content' wx:if='{{!list.length}}'>

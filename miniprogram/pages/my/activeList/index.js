@@ -92,7 +92,7 @@ Page({
          
       },
       success: (res) => {
-        console.log(res)
+      
         let list = this.data.activeList.concat(res.data.list)
         this.setData({
           activeList: list

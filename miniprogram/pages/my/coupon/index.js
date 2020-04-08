@@ -46,6 +46,7 @@ Page({
 
       },
       success: (res) => {
+        
         let list = this.data.list.concat(res.data.list)
         this.setData({
           list: list
