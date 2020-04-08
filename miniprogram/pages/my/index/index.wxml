@@ -94,7 +94,7 @@
       </view>
     </view>
 
-    <view class='card_item' bindtap="toBusiness">
+    <view class='card_item toBusinessLast' bindtap="toBusiness">
       <view class='card_left'>
         <image src='../../../images/my/icon_5.png' mode="widthFix" class='icon_img_1'></image>
         <text class='card_name'>商务合作微信：xxxxx</text>
