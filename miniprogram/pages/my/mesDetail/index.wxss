@@ -5,9 +5,13 @@
   color:#333333;
 
 }
+.rich{
+  padding-top:60rpx;
+}
 .time{
   font-size: 26rpx;
   color:#999999;
+  margin-bottom:30rpx;
 }
 .drocont{
   margin-top: 10rpx;

@@ -25,12 +25,25 @@
   width: 290rpx;
   margin-top: 6rpx;
 }
-.button_cont{
-  display: flex;
-  justify-content: center;
+.top_now{
   position: fixed;
   top:672rpx;
   width: 100%;
+}
+.button_cont{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.no_btn{
+  background:none!important;
+  box-shadow :none!important;
+  border: none!important;
+  outline: none!important;
+  color:#666666!important;
+}
+.no_btn::after{
+  border:none;
 }
 
 .mybutton{
@@ -50,11 +63,8 @@
 }
 
 .button_cont_two{
-
   display: flex;
   justify-content: center;
-  position: fixed;
-  top:872rpx;
   width: 100%;
 }
 .chat{

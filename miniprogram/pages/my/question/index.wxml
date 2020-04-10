@@ -6,11 +6,11 @@
 <view class='type_content'>
   <view class='type_item border' data-index="1" bindtap="changeType">
     <text>功能异常</text>
-    <image src='../../../images/my/yes.png' wx:if='{{type == 1}}' mode="widthFix" class='icon_yes'></image>
+    <image src='../../../images/my/yes.png' wx:if='{{type == 1}}'  class='icon_yes'></image>
   </view>
   <view class='type_item' data-index="2" bindtap="changeType">
     感兴趣的产品
-    <image src='../../../images/my/yes.png' wx:if='{{type == 2}}' mode="widthFix" class='icon_yes'></image>
+    <image src='../../../images/my/yes.png' wx:if='{{type == 2}}'  class='icon_yes'></image>
   </view>
 </view>
 

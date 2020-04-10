@@ -148,4 +148,5 @@
 }
 .icon_yes{
   width: 32rpx;
+  height: 25rpx;
 }

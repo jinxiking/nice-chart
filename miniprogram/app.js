@@ -121,7 +121,7 @@ App({
           if(res.authSetting['scope.userLocation']){
             //可以继续本页面逻辑
             // this.getBannerList();
-           
+            
             wx.switchTab({
               url: '/pages/home/index/index',
               success: function (e) {  

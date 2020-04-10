@@ -118,9 +118,16 @@ Page({
         images : arr.join(',')
       },
       success: (res) => {
-        wx.navigateBack({
-          complete: (res) => {},
+        wx.showToast({
+          title: '感谢您的热心反馈~~',
+          icon:'none'
         })
+        setTimeout(()=>{
+          wx.navigateBack({
+            complete: (res) => {},
+          })
+        },1500)
+  
       }
     })
   }

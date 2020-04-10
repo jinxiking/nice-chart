@@ -1,0 +1,5 @@
+<!--miniprogram/pages/home/advertising/index.wxml-->
+
+<image src='{{imgPath}}' class='bg'></image>
+<view class='tips'>{{index >= 0?index:"0"}}</view>
+

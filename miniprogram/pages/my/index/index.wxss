@@ -146,6 +146,7 @@
 
 .right{
   width: 30rpx;
+  height: 30rpx;
   position: relative;
   top:2rpx;
 }

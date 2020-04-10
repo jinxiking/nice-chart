@@ -3,7 +3,7 @@
   <swiper
     indicator-dots="{{indicatorDots}}" 
     autoplay="{{autoplay}}" 
-    current = "{{current}}"
+    circular="{{circular}}"
     class='swiper_now'
     bindchange = 'bindchange'
     > 
@@ -45,7 +45,7 @@
 </view>
 
 <view class='card_content'>
-  <view class='card' wx:for='{{bottomList}}' wx:key='index'> 
+  <view class='card' wx:for='{{bottomList}}' wx:key='index' bindtap='topDetai' data-vid='{{item.campaign_id}}'> 
     <view class='img_content'>
       <image src='{{item.logo}}' class='nav_img'></image>
     </view>
@@ -69,7 +69,7 @@
       </view>
 
     </view>
-    <view class='button' bindtap='topDetai' data-vid='{{item.campaign_id}}' wx:if='{{item.status == 1}}'>去抢购 <image src='../../../images/home/right_white.png' class='right'></image></view>
+    <view class='button'  wx:if='{{item.status == 1}}'>去抢购 <image src='../../../images/home/right_white.png' class='right'></image></view>
 
     <view class='button backg'  data-vid='{{item.campaign_id}}' wx:if='{{item.status == 2}}'>已结束</view>
   </view>

@@ -4,15 +4,17 @@
   <image src='../../../images/home/logo.png' mode="widthFix" class='logo_img'></image>
   <image src='../../../images/home/name_logo.png' mode="widthFix" class='logo_name'></image>
 </view>
-<view class='button_cont' wx:if='{{userHave && userBtn}}'>
-  <button class='mybutton' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>
-    <image src='../../../images/home/weChat.png' mode="widthFix" class='chat'></image>
-    微信用户一键登录
-  </button>
-</view>
+<view class='top_now'>
+  <view class='button_cont' wx:if='{{userHave && userBtn}}'>
+    <button class='mybutton' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>
+      <image src='../../../images/home/weChat.png' mode="widthFix" class='chat'></image>
+      微信用户一键登录
+    </button>
+  </view>
 
-<view class='button_cont_two' wx:if='{{localBtn}}' bindtap='opensetting'>
-  <button class='mybutton'>
-    开启地址授权
-  </button>
+  <view class='button_cont_two' wx:if='{{localBtn}}' bindtap='opensetting'>
+    <button class='mybutton {{(userHave && userBtn)?"no_btn":""}}'>
+      开启地址授权
+    </button>
+  </view>
 </view>

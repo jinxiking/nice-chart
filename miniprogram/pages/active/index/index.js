@@ -51,6 +51,13 @@ Page({
       shak_show : true,
     })
   },
+  closeBg(){
+    if(this.data.recoard.campaign_id == -1){
+      this.setData({
+        shak_show : true,
+      })
+    }
+  },
   getBottom(){
     util.ajax({
       url: '/v1/messages/'+this.data.page.page+'/' + this.data.page.pageSize,
@@ -219,32 +226,33 @@ Page({
                         clearInterval(timer);
                         //减速第六层循环
                         _this.setData({
-                          shak_show : false
+                          shak_show : false,
+                          isExists : true
                         })
-
+                        
                       }
                       _this.setData({
                         scrollCurrent: num
                       })
-                    },800)
+                    },300)
 
                   }
                   _this.setData({
                     scrollCurrent: num
                   })
-                }, 400)
+                }, 270)
 
               }
               _this.setData({
                 scrollCurrent: num
               })
-            }, 300)
+            }, 150)
 
           }
           _this.setData({
             scrollCurrent: num
           })
-        }, 250)
+        }, 100)
       }
       _this.setData({
         scrollCurrent : num

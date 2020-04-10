@@ -46,7 +46,7 @@
       </view>
 
       <view class='card_right'>
-          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
+          <image src='../../../images/home/right.png'  class='right'></image>
       </view>
     </view>
 
@@ -57,7 +57,7 @@
       </view>
 
       <view class='card_right'>
-          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
+          <image src='../../../images/home/right.png'  class='right'></image>
       </view>
     </view>
 
@@ -68,7 +68,7 @@
       </view>
 
       <view class='card_right'>
-          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
+          <image src='../../../images/home/right.png'  class='right'></image>
       </view>
     </view>
 
@@ -79,7 +79,7 @@
       </view>
 
       <view class='card_right'>
-          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
+          <image src='../../../images/home/right.png' class='right'></image>
       </view>
     </view>
 
@@ -90,7 +90,7 @@
       </view>
 
       <view class='card_right'>
-          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
+          <image src='../../../images/home/right.png'  class='right'></image>
       </view>
     </view>
 
@@ -101,7 +101,7 @@
       </view>
 
       <view class='card_right'>
-          <image src='../../../images/home/right.png' mode="widthFix" class='right'></image>
+          <image src='../../../images/home/right.png'  class='right'></image>
       </view>
     </view>
   </view>

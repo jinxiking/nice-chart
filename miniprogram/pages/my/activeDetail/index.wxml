@@ -1,5 +1,5 @@
 <!--miniprogram/pages/my/activeDetail/index.wxml-->
-
+<wxs module="filter" src="../../../utils/public.wxs"></wxs>
 <view class='top'>
   <view class='active_name'> 
     <!-- {{detailTop.title}} -->
@@ -73,7 +73,7 @@
       </view>
       <view>
         <view class='none_view'></view>
-        <view class='line_1'>2020-20-20</view>
+        <view class='line_1'>{{filter.formatDate(item.c_time,"YY-MM-DD")}}</view>
       </view>
     </view>
 

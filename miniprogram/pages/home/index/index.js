@@ -16,6 +16,7 @@ Page({
     interval: 2000,
     duration: 500,
     current : 0,
+    circular : true,
     bannerList : [
       
     ],

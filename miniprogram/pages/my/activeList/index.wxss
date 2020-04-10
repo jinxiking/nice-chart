@@ -2,6 +2,21 @@
 .active_content{
   padding: 24rpx 32rpx;
 }
+.no_coupon{
+  width: 340rpx;
+  height: 340rpx;
+
+}
+.nolist_content{
+  text-align: center;
+  color:#9DA3B4;
+  font-size: 28rpx;
+  margin-top: 50rpx;
+}
+.tobay{
+  margin-top:20rpx;
+  color:#FE1B42;
+}
 
 
 

@@ -6,13 +6,14 @@
   </view>
 
   <view class='to_coupon_content'>
-    <view class='to_coupon' bindtap="toMyCoupon">我的优惠券 <image src='../../../images/home/right_white.png' mode="widthFix" class='right'></image></view>
+    <view class='to_coupon' bindtap="toMyCoupon">我的优惠券 <image src='../../../images/home/right_white.png'  class='right'></image></view>
   </view>
 
   <view class='turntable'>
     <image src='../../../images/active/zhuanpan_bg.png' class='mid_bg'></image>
     <view  wx:for='{{list}}' wx:key='index' class='num_{{index+1}} {{scrollCurrent == (index+1) ? "active" : ""}}'>
-      <image src='{{item.logo}}' class='active_img'></image>
+      <image src='{{item.logo}}' mode="widthFix" class='active_img'></image>
+      <view class='active_text {{scrollCurrent == (index+1) ? "active" : ""}}'>{{item.title}}</view>
     </view>
     <!-- <view class='num_2 {{scrollCurrent == 2 ? "active" : ""}}'>2</view>
     <view class='num_3 {{scrollCurrent == 3 ? "active" : ""}}'>3</view>
@@ -21,8 +22,8 @@
     <view class='num_6 {{scrollCurrent == 6 ? "active" : ""}}'>6</view>
     <view class='num_7 {{scrollCurrent == 7 ? "active" : ""}}'>7</view>
     <view class='num_8 {{scrollCurrent == 8 ? "active" : ""}}'>8</view> -->
-    <view class='num_9 {{(isExists || mytag)?"bgg":""}}' bindtap='begin'>
-      <view>{{(isExists || mytag)?'已经':'开始'}}</view>
+    <view class='num_9 {{(isExists)?"bgg":""}}' bindtap='begin'>
+      <view>{{(isExists)?'已经':'开始'}}</view>
       <view>抽奖</view>
     </view>
   </view>
@@ -57,16 +58,16 @@
 <!-- bindtap="closeShak" -->
   <view class='shak_div'>
   <!-- ../../../images/active/zhongjiang.png -->
-    <image src='{{recoard.campaign_id == -1?"../../../images/active/nozhongjiang.png":"../../../images/active/zhongjiang.png"}}' mode="widthFix" class='shak_img'></image>
-    <image src='{{recoard.logo}}' class='zhongjiangImg'></image>
-    <view class='view-content'>
+    <image src='{{recoard.campaign_id == -1?"../../../images/active/nozhongjiang.png":"../../../images/active/zhongjiang.png"}}' mode="widthFix" class='shak_img' bindtap="closeBg"></image>
+    <image src='{{recoard.logo}}' class='zhongjiangImg' wx:if='{{recoard.campaign_id != -1}}'></image>
+    <view class='view-content' wx:if='{{recoard.campaign_id != -1}}'>
       <view class='first_view'>
         {{recoard.campaign_id == -1?"很遗憾没有中奖~":"恭喜您获得" +recoard.title+ " 快去使用吧~"}}
       </view>
       
     </view>
-    <view class='view-content'>
-      <view class='button {{recoard.campaign_id == -1?"nozhongjiang":""}}' bindtap="submit" bindtap="closeShak"> 
+    <view class='view-content' wx:if='{{recoard.campaign_id != -1}}'>
+      <view class='button' bindtap="submit" bindtap="closeShak"> 
           <text class='mr20'>确定</text>
         </view>
     </view>

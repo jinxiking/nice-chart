@@ -1,9 +1,15 @@
 /* miniprogram/pages/active/index/index.wxss */
 .active_img{
-  width: 160rpx;
-  height: 160rpx;
+  width: 110rpx;
+  height: 110rpx;
   margin-top: 10rpx;
 }
+.active_text{
+  color:#FF845E;
+  background:none!important;
+  font-size: 24rpx;
+}
+
 page{
   background: rgba(252,58,63);
 }
@@ -150,10 +156,12 @@ page{
   color:#fff;
 }
 .active{
-  background: red!important;
+  background:linear-gradient(311deg,rgba(254,27,66,1) 0%,rgba(250,123,59,1) 100%)!important;
+  color:#fff!important;
 }
 .right{
   width: 25rpx;
+  height: 25rpx;
   position: relative;
   top:2rpx;
 }
