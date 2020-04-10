@@ -34,19 +34,23 @@
       <view class='swiper_content'>
       </view>
    
-    
+
       <swiper
         indicator-dots="{{indicatorDotss}}" 
         autoplay="{{autoplays}}" 
         current = "{{currents}}"
         vertical='{{verticals}}'
+        interval="2000"
+        circular="true"
+        display-multiple-items="2"
         class='swiper_now'
+
         bindchange = 'bindchange'
         > 
         <block wx:for="{{messageCont}}" wx:for-item='item' wx:key="index">
           <swiper-item class="item_swiper" catchtouchmove="stopTouchMove">
-              <view>{{item[0].user_name}}抽到了{{item[0].coupons_name}}</view>
-              <view>{{item[1].user_name}}抽到了{{item[1].coupons_name}}</view>
+              <view>{{item.user_name}}抽到了{{item.coupons_name}}</view>
+              
           </swiper-item>
         </block>
       </swiper>

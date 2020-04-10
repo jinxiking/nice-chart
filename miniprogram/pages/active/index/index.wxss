@@ -149,11 +149,14 @@ page{
 .swiper_now{
   margin-top: -140rpx;
   overflow: hidden;
+  height: 70px;
 }
 .item_swiper view{
   line-height: 70rpx;
   text-align: center;
   color:#fff;
+  font-size: 24rpx;
+
 }
 .active{
   background:linear-gradient(311deg,rgba(254,27,66,1) 0%,rgba(250,123,59,1) 100%)!important;

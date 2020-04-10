@@ -71,12 +71,12 @@ Page({
         if(res.data.list.length == 0){
           return;
         }
-        for(var i = 0;i<=res.data.list.length;i++){
-          if(i%2 == 1 ){
+        for(var i = 0;i<res.data.list.length;i++){
+       
             list.push(
-              [res.data.list[i],res.data.list[i-1]]
+              res.data.list[i]
             )
-          }
+      
         }
         this.setData({
           messageCont :list

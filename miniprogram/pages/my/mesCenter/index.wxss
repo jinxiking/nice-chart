@@ -2,11 +2,14 @@
 
 /* pages/home/messagesCenter/index.wxss */
 page{
-  background: #fff;
+  background: #f5f5f5;
 }
 .content{
   padding: 30rpx;
   padding-top:0rpx;
+  margin-top:30rpx;
+  padding-bottom: 0;
+  background: #fff;
 }
 .list_item{
   display: flex;
@@ -16,6 +19,7 @@ page{
   border-bottom:1px solid rgba(0,0,0,0.1); 
   font-size:26rpx;
   margin-top:30rpx; 
+  padding:18rpx 0;
 }
 .title{
   color:#333333;
