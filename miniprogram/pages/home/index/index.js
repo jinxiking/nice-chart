@@ -230,6 +230,9 @@ Page({
           }
         }
         if(!tag){
+          this.setData({
+            activeIndex : 1
+          })
           this.getBottomList(1);
         }
         

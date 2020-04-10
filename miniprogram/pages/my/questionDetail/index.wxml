@@ -13,7 +13,7 @@
       </view>
     </view>
 
-    <view class='dro_content'>
+    <view class='dro_content' wx:if='{{item.active}}'>
       {{item.content}}
     </view>
 

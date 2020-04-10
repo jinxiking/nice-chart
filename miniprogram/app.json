@@ -1,15 +1,14 @@
 {
   "pages": [
+    "pages/home/advertising/index",
     "pages/home/index/index",
     "pages/my/question/index",
     "pages/active/index/index",
-    "pages/home/advertising/index",
+    
     
     "pages/my/index/index",
 
     "pages/home/login/index",
-
-    
     "pages/my/coupon/index",
     
     "pages/my/activeDetail/index",
