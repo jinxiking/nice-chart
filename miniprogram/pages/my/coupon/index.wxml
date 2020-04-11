@@ -7,9 +7,9 @@
         </view>
         <view class='item_right'>
           <view class='name'>{{item.name}}</view>
-          <view class='adress'><image src='../../../images/my/adress_icon.png' mode="widthFix" class='adr_icon'></image>{{item.address}}</view>
+          <view class='adress'><image src='../../../images/my/adress_icon.png' class='adr_icon'></image>{{item.address}}</view>
         </view>
-        <view class='button' catchtap="toAdress" data-latitude='{{item.lat}}' data-longitude='{{item.lng}}'>去这里<image src='../../../images/home/right_white.png' mode="widthFix" class='right'></image></view>
+        <view class='button' catchtap="toAdress" data-latitude='{{item.lat}}' data-longitude='{{item.lng}}'>去这里<image src='../../../images/home/right_white.png' class='right'></image></view>
       </view>
   </view>
 </view>

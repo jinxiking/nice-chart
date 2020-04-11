@@ -6,7 +6,7 @@
 
 <view class='shop_name'>
     <view class='name'>{{detail.shop_name}}</view>
-    <view class='adress'><image src='../../../images/my/adress_icon.png' mode="widthFix" class='adr_icon'></image>{{detail.shop_address}}</view>
+    <view class='adress'><image src='../../../images/my/adress_icon.png' class='adr_icon'></image>{{detail.shop_address}}</view>
 </view>
 <view class='card_title'>活动说明：该优惠券适用于{{detail.shop_name}}以下商品</view>
 <view class='card_content'>
@@ -22,7 +22,7 @@
     </view>
     <view class='card_tips'>秒杀后{{detail.expire}}日内可消费，超过{{detail.expire}}日该优惠券自动失效</view>
   </view>
-  <view class='button' bindtap="submit" wx:if='{{detail.status < 2}}'>
+  <view class='button' bindtap="submit" wx:if='{{detail.status < 2 && !eid}}'>
     <text class='mr20'>抢购</text>
     <count-down c-class="red" 
       target="{{targetTime}}"

@@ -154,7 +154,9 @@
 .none_view{
   height: 40rpx;
 }
-
+.text_left{
+  text-align: left;
+}
 .detail_content{
   background: #fff;
   padding-top:24rpx;

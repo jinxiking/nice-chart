@@ -10,7 +10,9 @@
     controls
     class='top_videw'
     ></video> -->
-
-  <rich-text nodes="{{detail.content}}" bindtap="tap"></rich-text>
+  <view class='rich_content'>
+    <rich-text nodes="{{detail.content}}" bindtap="tap"></rich-text>
+  </view>
+ 
 </view>
 

@@ -24,6 +24,7 @@ const ajax = (option) =>{
     method: option.method,
     header: header,
     success : (res)=>{
+      wx.hideLoading();
       if (res.data.code == 200){
         
         option.success(res.data);
@@ -46,10 +47,10 @@ const ajax = (option) =>{
       }
     },
     complete:(res)=>{
-      wx.hideLoading();
+      // wx.hideLoading();
     },
     fail : ()=>{
-      
+      wx.hideLoading();
     }
 
   })

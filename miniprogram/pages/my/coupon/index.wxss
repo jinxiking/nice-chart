@@ -30,6 +30,7 @@
 
 .right{
   width: 25rpx;
+  height: 25rpx;
   position: relative;
   top:2rpx;
 }
@@ -78,6 +79,7 @@
 }
 .adr_icon{
   width: 20rpx;
+  height: 25rpx;
   margin-right:8rpx;
   position: relative;
   top:3rpx;

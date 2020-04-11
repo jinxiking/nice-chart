@@ -2,8 +2,8 @@
 <wxs module="filter" src="../../../utils/public.wxs"></wxs>
 <view class='top'>
   <view class='active_name'> 
-    <!-- {{detailTop.title}} -->
-    5号店铺
+    {{detailTop.title}}
+    <!-- 5号店铺 -->
   </view>
 
   <view class='active_detail'>
@@ -68,8 +68,8 @@
   <view class='detail_content'>
     <view class='table_item f23' wx:for='{{list}}' wx:key='index'>  
       <view>
-        <view class='ft26'>{{item.user_name}}</view>
-        <view>{{item.status == 1?'未消费':'已消费'}}</view>
+        <view class='ft26 text_left'>{{item.user_name}}</view>
+        <view class='text_left'>{{item.status == 1?'未消费':'已消费'}}</view>
       </view>
       <view>
         <view class='none_view'></view>

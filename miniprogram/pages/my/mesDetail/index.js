@@ -27,6 +27,9 @@ Page({
     
       },
       success: (res) => {
+        let content= res.data.content.replace(/<img/ig, '<img style="width:100%!important; border-radius: 4px;"');
+        res.data.content = content;
+        
         this.setData({
           detail: res.data
         })

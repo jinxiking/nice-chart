@@ -1,9 +1,15 @@
 /* miniprogram/pages/my/mesDetail/index.wxss *//* pages/home/mesDetail/index.wxss */
+.rich_content{
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  display: block;
+}
 
 .title{
   font-size: 30rpx;
   color:#333333;
-
+  margin-left: 32rpx;
+  margin-right: 32rpx;
 }
 .rich{
   padding-top:60rpx;
@@ -12,7 +18,10 @@
   font-size: 26rpx;
   color:#999999;
   margin-bottom:30rpx;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
 }
+
 .drocont{
   margin-top: 10rpx;
 }
@@ -23,6 +32,6 @@
 }
 page{
   background: #fff;
-  padding: 28rpx 32rpx;
+  padding: 28rpx 0;
   
 }

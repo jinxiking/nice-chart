@@ -117,6 +117,7 @@ page{
   margin-right:8rpx;
   position: relative;
   top:3rpx;
+  height: 25rpx;
 }
 .card_tips{
   font-size:26rpx;

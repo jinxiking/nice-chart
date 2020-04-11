@@ -15,7 +15,12 @@
 }
 .rich_text{
   max-height: 800rpx;
-
+  display: block;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+}
+.mt_rich{
+  text-align: center;
 }
 .close_noe{
   width:60rpx;
@@ -27,6 +32,7 @@
 .shak_title{
   text-align: left;
   padding: 24rpx;
+  padding-bottom: 0;
 }
 .shak_content{
   background: #fff;
@@ -47,7 +53,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center;
 
 }
 .img_text{
