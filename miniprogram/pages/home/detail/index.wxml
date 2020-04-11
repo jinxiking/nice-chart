@@ -11,13 +11,13 @@
 <view class='card_title'>活动说明：该优惠券适用于{{detail.shop_name}}以下商品</view>
 <view class='card_content'>
   <view class='card'> 
-    <image src='../../../images/my/coupon_bg.png' mode="widthFix" class='coupon_bg'></image>
+    <!-- <image src='../../../images/my/coupon_bg.png' mode="widthFix" class='coupon_bg'></image> -->
     <view class='card_dro'>
         <!-- <image src='../../../images/home/shop.png' mode="widthFix" class='card_img'></image> -->
         <view class='card_text'>
-          <view class='card_text_name'>{{detail.remark}}</view>
-
-          <view class='card_text_number'>仅剩{{detail.coupons_num}}份</view>
+          <!-- <view class='card_text_name'>{{detail.remark}}</view> -->
+          <rich-text  class='card_text_name' nodes="{{detail.remark}}"></rich-text>
+          <view class='card_text_number' wx:if='{{detail.status < 2}}'>仅剩{{detail.coupons_num}}份</view>
         </view>
     </view>
     <view class='card_tips'>秒杀后{{detail.expire}}日内可消费，超过{{detail.expire}}日该优惠券自动失效</view>
@@ -31,6 +31,10 @@
       bindcallback="myLinsterner"
       wx:if='{{targetTime}}'
       ></count-down>
+  </view>
+
+  <view class='button' bindtap="submitUse" wx:if='{{eid}}'>
+    <text class='mr20'>立即使用</text>
   </view>
 </view>
 

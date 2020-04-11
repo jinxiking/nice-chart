@@ -15,7 +15,12 @@
           </view>
           <view class='card_right'>
             <view class='card_right_top'>{{item.title}}</view>
-            <view class='card_right_bottom'>{{item.remark}}</view>
+            <view class='card_right_bottom'>
+              <image src='../../../images/my/wenhao.png'  class='wenhao' data-vindex="{{index}}"  bindtap="detailShow"></image>
+            </view>
+
+
+            <!-- {{item.remark}} -->
           </view>
           <view class='button used' wx:if='{{current == 1}}'>已使用</view>
           <view class='button {{item.end_int == 0?"":"used"}}' wx:if='{{current != 1}}' data-vindex="{{index}}" bindtap="userAction">{{item.end_int == 0?'立即使用':'已过期'}}</view>
@@ -31,12 +36,28 @@
       <view>暂无优惠券</view>
       <view class='tobay' bindtap="toHome">麻溜~去抢购</view>
     </view>
-    
-
-    
+  
   </view>
 </view>
 
-<view class='shak' hidden="{{shak_show}}" bindtap="closeShak">
-    <image src='{{imgPath}}' mode="widthFix" class='shak_img'></image>
+<view class='shak detail_shak' hidden="{{shak_show}}">
+   
+    <view class='shak_content'>
+      <image src='../../../images/active/close.png' mode="widthFix" class='close_noe' bindtap="closeShak"></image>
+      <view class='rich_text'>
+          <image src='{{imgPath}}' mode="widthFix" class='shak_img'></image>
+          <view class='img_text'>{{imgTitle}}</view>
+      </view>
+    </view>
+</view>
+
+
+<view class='shak detail_shak' hidden="{{detailShowTag}}">
+    <view class='shak_content'>
+      <image src='../../../images/active/close.png' mode="widthFix" class='close_noe' bindtap="closeShak"></image>
+      <view class='shak_title'>使用说明</view>
+      <view class='rich_text'>
+        <rich-text nodes="{{chose_node}}" bindtap="tap" class='rich'></rich-text>
+      </view>
+    </view>
 </view>

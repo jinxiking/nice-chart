@@ -7,3 +7,7 @@
     <text class='time'>{{filter.formatDate(item.c_time,"YY-MM-DD")}}</text>
   </view>
 </view>
+<view class='nolist_content' wx:if='{{!list.length}}'>
+    <image src='../../../images/my/no_message.png' mode="widthFix" class='no_coupon'></image>
+    <view>暂无任何消息哦~</view>
+</view>

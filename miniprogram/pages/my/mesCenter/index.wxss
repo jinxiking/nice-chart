@@ -4,6 +4,21 @@
 page{
   background: #f5f5f5;
 }
+.nolist_content{
+  text-align: center;
+  color:#9DA3B4;
+  font-size: 28rpx;
+  margin-top: 50rpx;
+}
+.tobay{
+  margin-top:20rpx;
+  color:#FE1B42;
+}
+.no_coupon{
+  width: 340rpx;
+  height: 340rpx;
+
+}
 .content{
   padding: 30rpx;
   padding-top:0rpx;

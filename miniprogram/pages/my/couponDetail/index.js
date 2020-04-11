@@ -6,8 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    chose_node : '',
+    detailShowTag : true,
     shak_show : true,
     imgPath : '',
+    imgTitle : '',
     typeList : [
       {
         name : '未消费'
@@ -30,6 +33,7 @@ Page({
   closeShak(){
     this.setData({
       shak_show : true,
+      detailShowTag : true
     })
   },
   userAction(e){
@@ -42,6 +46,7 @@ Page({
      
       this.setData({
         shak_show : false,
+        imgTitle : item.title,
         imgPath : item.name
       })
     }
@@ -52,11 +57,20 @@ Page({
    */
   onLoad: function (options) {
     let id = options.id
-    // let id = 3;
+    // let id = 2;
     this.setData({
       id : id
     })
     this.getList(id);
+  },
+  detailShow(e){
+    
+    let num = e.currentTarget.dataset.vindex;
+  
+    this.setData({
+      detailShowTag : false,
+      chose_node : this.data.shopList[num].remark
+    })
   },
   getList(){
     util.ajax({

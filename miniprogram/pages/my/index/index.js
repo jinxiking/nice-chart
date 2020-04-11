@@ -43,42 +43,44 @@ Page({
     wx.scanCode({
       success : res=>{
         console.log(res)
-        // util.ajax({
-        //   url: res.result,
-        //   method: 'GET',
-        //   data : {
-            
-        //   },
-        //   success: (res) => {
-        //     this.setData({
-        //       showOneButtonDialog : true
-        //     })
-        //   }
-        // })
-        wx.request({
-          url:res.result,
-          data :{
+        
+        util.ajax({
+          url:'/v1/code/info/' + res.result,
+          method: 'GET',
+          data : {
             
           },
-          header: {
-            'content-type': 'application/x-www-form-urlencoded',
-            token : app.globalData.token
-          },
-          method : 'get',
-          success : res=>{
-            if(res.data.code == 200){
-              this.setData({
-                showOneButtonDialog : true,
-                title : '使用成功'
-              })
-            }else{
-              this.setData({
-                showOneButtonDialog : true,
-                title : '使用失败'
-              })
-            }
+          success: (ress) => {
+
+            wx.navigateTo({
+              url: '/pages/home/detail/index?useId=' + ress.data.id + '&comeId=' + res.result,
+            })
           }
         })
+        // wx.request({
+        //   url:res.result,
+        //   data :{
+            
+        //   },
+        //   header: {
+        //     'content-type': 'application/x-www-form-urlencoded',
+        //     token : app.globalData.token
+        //   },
+        //   method : 'get',
+        //   success : res=>{
+        //     if(res.data.code == 200){
+        //       this.setData({
+        //         showOneButtonDialog : true,
+        //         title : '使用成功'
+        //       })
+        //     }else{
+        //       this.setData({
+        //         showOneButtonDialog : true,
+        //         title : '使用失败'
+        //       })
+        //     }
+        //   }
+        // })
       },
       fail :res=>{
         wx.showToast({

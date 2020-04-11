@@ -26,6 +26,7 @@ Page({
     interval: 2000,
     duration: 500,
     current: 0,
+    pageTag : true,
     page : {
       page : 1,
       pageSize : 20
@@ -38,6 +39,14 @@ Page({
     this.scroller();
     this.getActives();
     this.getBottom();
+    this.setData({
+      autoplays : true
+    })
+  },
+  onHide:function(){
+    this.setData({
+      autoplays : false
+    })
   },
 
   /**
@@ -69,8 +78,14 @@ Page({
       success: (res) => {
         let list = this.data.messageCont
         if(res.data.list.length == 0){
+          this.setData({
+            pageTag:false
+          })
           return;
         }
+        this.setData({
+          pageTag:true
+        })
         for(var i = 0;i<res.data.list.length;i++){
        
             list.push(
@@ -90,12 +105,15 @@ Page({
         return;
       }
       let num = this.data.page.page;
-      this.setData({
-        page : {
-          page : num + 1,
-          pageSize : 20
-        }
-      })
+      if(this.data.pageTag){
+        this.setData({
+          page : {
+            page : num + 1,
+            pageSize : 20
+          }
+        })
+      }
+      
       this.getBottom()
     }
   },

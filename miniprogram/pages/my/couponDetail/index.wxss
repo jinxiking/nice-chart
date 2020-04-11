@@ -1,4 +1,40 @@
 /* miniprogram/pages/my/couponDetail/index.wxss */
+.wenhao{
+  width: 40rpx;
+  height: 40rpx;
+}
+.detail_shak{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:8rpx;
+  
+}
+.rich{
+  padding: 24rpx;
+}
+.rich_text{
+  max-height: 800rpx;
+
+}
+.close_noe{
+  width:60rpx;
+  position: absolute;
+  left:50%;
+  margin-left: -30rpx;
+  bottom:-160rpx;
+}
+.shak_title{
+  text-align: left;
+  padding: 24rpx;
+}
+.shak_content{
+  background: #fff;
+  width: 90%;
+  margin-top: -250rpx;
+  position: relative;
+  border-radius: 8rpx;
+}
 .shak{
   background: #000;
   position: fixed;
@@ -12,13 +48,19 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding-top: 30%;
 
+}
+.img_text{
+  margin-top:80rpx;
+  margin-bottom:80rpx;
+  color:#FE1B42;
+  font-size: 50rpx;
 }
 
 .shak_img{
-  width: 500rpx;
-  height: 500rpx;
+  width: 360rpx;
+  height: 360rpx;
+  margin-top: 72rpx;
 }
 
 

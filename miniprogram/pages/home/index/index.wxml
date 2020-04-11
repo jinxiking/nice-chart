@@ -21,25 +21,25 @@
 </view>
 
 <view class='time_content'>
-    <view class='{{activeIndex== 1?"active":""}}'>
+    <view class='{{activeIndex== 1?"active":""}}'  data-index='1' bindtap="setActiveIndex">
       <view class='time_show'>08:00</view>
-      <view class='time_dro' data-index='1' bindtap="setActiveIndex">{{value[dataObj['1']]}}</view>
+      <view class='time_dro'>{{value[dataObj['1']]}}</view>
     </view>
-    <view  class='{{activeIndex== 2?"active":""}}'>
+    <view  class='{{activeIndex== 2?"active":""}}'  data-index='2' bindtap="setActiveIndex">
       <view class='time_show'>10:00</view>
-      <view class='time_dro' data-index='2' bindtap="setActiveIndex">{{value[dataObj['2']]}}</view>
+      <view class='time_dro'>{{value[dataObj['2']]}}</view>
     </view>
-    <view  class='{{activeIndex== 3?"active":""}}'>
+    <view  class='{{activeIndex== 3?"active":""}}' data-index='3' bindtap="setActiveIndex">
       <view class='time_show'>12:00</view>
-      <view class='time_dro' data-index='3' bindtap="setActiveIndex">{{value[dataObj['3']]}}</view>
+      <view class='time_dro'>{{value[dataObj['3']]}}</view>
     </view>
-    <view class='{{activeIndex== 4?"active":""}}'>
+    <view class='{{activeIndex== 4?"active":""}}' data-index='4' bindtap="setActiveIndex">
       <view class='time_show'>14:00</view>
-      <view class='time_dro' data-index='4' bindtap="setActiveIndex">{{value[dataObj['4']]}}</view>
+      <view class='time_dro'>{{value[dataObj['4']]}}</view>
     </view>
-    <view class='{{activeIndex== 5?"active":""}}'>
+    <view class='{{activeIndex== 5?"active":""}}' data-index='5' bindtap="setActiveIndex">
       <view class='time_show'>16:00</view>
-      <view class='time_dro' data-index='5' bindtap="setActiveIndex">{{value[dataObj['5']]}}</view>
+      <view class='time_dro'>{{value[dataObj['5']]}}</view>
     </view>
 
 </view>

@@ -126,7 +126,7 @@ Page({
           wx.navigateBack({
             complete: (res) => {},
           })
-        },1500)
+        },2000)
   
       }
     })

@@ -39,6 +39,7 @@ App({
           },
           method : 'post',
           success : (res)=>{
+   
             flag = false;
             if(res.data.code == 200){
               let token = res.data.data.token;
@@ -47,13 +48,20 @@ App({
               _this.globalData.token = token;
 
               if(res.data.data.is_upload){
+           
                 _this.getSettings()  
               }else{
-                wx.redirectTo({
+                var pages = getCurrentPages() 
+  
+                if(pages[0].route == 'pages/home/index/index'){
+          
+                  pages[0].onShow();
+                  return;
+                }
+                wx.switchTab({
                   url: '/pages/home/index/index',
                   success: function (e) {  
-                    console.log(8887)
-                    console.log(e)
+         
                     var page = getCurrentPages().pop();  
                     if (page == undefined || page == null) return;  
                     page.onLoad();  
@@ -96,6 +104,13 @@ App({
                   method : 'post',
                   success : (res)=>{
                     //可以继续本页面逻辑
+                    var pages = getCurrentPages() 
+  
+                    if(pages[0].route == 'pages/home/index/index'){
+              
+                      pages[0].onShow();
+                      return;
+                    }
                     wx.switchTab({
                       url: '/pages/home/index/index',
                       success: function (e) {  
@@ -121,7 +136,13 @@ App({
           if(res.authSetting['scope.userLocation']){
             //可以继续本页面逻辑
             // this.getBannerList();
-            
+            var pages = getCurrentPages() 
+
+            if(pages[0].route == 'pages/home/index/index'){
+                
+              pages[0].onShow();
+              return;
+            }
             wx.switchTab({
               url: '/pages/home/index/index',
               success: function (e) {  
