@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/home/advertising/index",
     "pages/my/index/index",
     "pages/my/mesCenter/index",
-    "pages/home/advertising/index",
+   
  
     
    
