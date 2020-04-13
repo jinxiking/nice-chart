@@ -95,6 +95,10 @@ page{
   border-radius: 50%;
   background: #F5F5F5;
 }
+.bgg{
+  background: grey!important;
+  color:#fff!important;
+}
 .tips{
   margin-top: 32rpx;
   font-size: 28rpx;

@@ -42,7 +42,8 @@
 
 <view class='shak detail_shak' hidden="{{shak_show}}">
    
-    <view class='shak_content'>
+    <view class='shak_content shakbg'>
+      <image src='../../../images/my/remark_bg.png' class='remark_bg'></image>
       <image src='../../../images/active/close.png' mode="widthFix" class='close_noe' bindtap="closeShak"></image>
       <view class='rich_text mt_rich'>
           <image src='{{imgPath}}' mode="widthFix" class='shak_img'></image>

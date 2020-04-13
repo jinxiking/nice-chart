@@ -1,19 +1,13 @@
 {
   "pages": [
     "pages/home/advertising/index",
-    "pages/my/index/index",
-    "pages/my/mesCenter/index",
-   
- 
-    
-   
     "pages/my/couponDetail/index",
     "pages/home/index/index",
-    
-    "pages/active/index/index",
-    
-    
-    
+
+    "pages/my/index/index",
+    "pages/my/mesCenter/index",
+
+    "pages/active/index/index",  
     "pages/my/question/index",
   
     "pages/home/login/index",

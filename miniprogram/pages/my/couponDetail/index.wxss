@@ -10,6 +10,18 @@
   border-radius:8rpx;
   
 }
+.shakbg{
+  background: none!important;
+  position: relative;
+  
+}
+.remark_bg{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 800rpx;
+
+}
 .rich{
   padding: 24rpx;
 }
@@ -21,13 +33,15 @@
 }
 .mt_rich{
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
 .close_noe{
   width:60rpx;
   position: absolute;
   left:50%;
   margin-left: -30rpx;
-  bottom:-160rpx;
+  bottom:-190rpx;
 }
 .shak_title{
   text-align: left;
@@ -36,7 +50,7 @@
 }
 .shak_content{
   background: #fff;
-  width: 90%;
+  width: 650rpx;
   margin-top: -250rpx;
   position: relative;
   border-radius: 8rpx;
@@ -56,7 +70,7 @@
 
 }
 .img_text{
-  margin-top:80rpx;
+  margin-top:170rpx;
   margin-bottom:80rpx;
   color:#FE1B42;
   font-size: 50rpx;
@@ -65,7 +79,7 @@
 .shak_img{
   width: 360rpx;
   height: 360rpx;
-  margin-top: 72rpx;
+  margin-top: 82rpx;
 }
 
 

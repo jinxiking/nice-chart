@@ -22,14 +22,14 @@
     </view>
     <view class='card_tips'>秒杀后{{detail.expire}}日内可消费，超过{{detail.expire}}日该优惠券自动失效</view>
   </view>
-  <view class='button' bindtap="submit" wx:if='{{detail.status == 1 && !eid}}'>
-    <text class='mr20'>抢购</text>
+  <view class='button {{detail.is_seckill == 1?"bgg":""}}' bindtap="submit" wx:if='{{detail.status == 1 && !eid}}'>
+    <text class='mr20'>{{detail.is_seckill == 1?"已抢购":"抢购"}}</text>
     <count-down c-class="red" 
       target="{{targetTime}}"
       show-day="{{false}}"
       clear-timer='{{clearTimer}}'
       bindcallback="myLinsterner"
-      wx:if='{{targetTime}}'
+      wx:if='{{targetTime && detail.is_seckill != 1}}'
       ></count-down>
   </view>
 
