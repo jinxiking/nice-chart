@@ -1,25 +1,20 @@
 {
   "pages": [
+    "pages/special/index/index",
+    "pages/home/detail/index",
+    "pages/home/index/index",
+    "pages/special/search/index",
+    "pages/active/index/index",
     "pages/home/advertising/index",
     "pages/my/couponDetail/index",
-    "pages/home/index/index",
-
     "pages/my/index/index",
     "pages/my/mesCenter/index",
-
-    "pages/active/index/index",  
     "pages/my/question/index",
-  
     "pages/home/login/index",
     "pages/my/coupon/index",
     "pages/my/activeDetail/index",
-    
-    
     "pages/my/activeList/index",
-    
     "pages/my/mesDetail/index",
-    
-    "pages/home/detail/index",
     "pages/my/questionDetail/index"
   ],
   "window": {
@@ -34,6 +29,13 @@
     "selectedColor": "#fdb975",
     "backgroundColor": "#fff",
     "list": [
+      {
+        "pagePath": "pages/special/index/index",
+        "text": "云百汇",
+        "iconPath": "/images/home/four.png",
+        "selectedIconPath": "/images/home/four.png",
+        "auth": 0
+      },
       {
         "pagePath": "pages/home/index/index",
         "text": "秒杀",

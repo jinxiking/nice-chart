@@ -12,7 +12,8 @@ Page({
     id : '',
     detail : {},
     eid : '',
-    comeId : ''
+    comeId : '',
+    cloudId : '' //云百汇专用
   },
   myLinsterner(){
     this.getDetail();
@@ -34,12 +35,44 @@ Page({
         comeId : options.comeId,
       })
       this.getDetail(options.useId);
+    }else if(options.cloudId){
+      this.setData({
+        cloudId : options.cloudId
+      })
+      this.getCloudDetail(options.cloudId);
     }
    
   },
+  getCloudDetail(){
+    let _this = this;
+    
+    util.ajax({
+      url: '/v1/ybh/info/' + this.data.cloudId,
+      method: 'GET',
+      data : {
+        
+      },
+      success: (res) => {
+   
+        this.setData({
+          detail : res.data
+        })
+      
+        if(res.data.count_down){
+          let time = new Date().getTime();
+          _this.setData({
+            targetTime : time + res.data.count_down*1000
+          })
+          console.log(this.data.targetTime)
+          
+          
+        }
+      }
+    })
+  },
   getDetail(){
     let _this = this;
-    console.log( this.data.id)
+    
     util.ajax({
       url: '/v1/seckill/campaign/' + this.data.id,
       method: 'GET',
@@ -88,6 +121,34 @@ Page({
       }
     })
   },
+  submitYbh(){
+    if(mytag){
+      return;
+    }
+    mytag = true;
+    util.ajax({
+      url: '/v1/ybh/seckill/' + this.data.id,
+      method: 'POST',
+      data : {
+        
+      },
+      success: (res) => {
+        mytag = false;
+        wx.showToast({
+          title: '秒杀成功',
+          icon : 'none'
+        })
+        setTimeout(()=>{
+          wx.navigateBack({
+            complete: (res) => {},
+          })
+        },2000)
+      },
+      fali : res=>{
+        mytag = false;
+      }
+    })
+  },
   submit(){
     if(this.data.is_seckill == 1){
       wx.showToast({
@@ -97,6 +158,11 @@ Page({
       return;
     }
 
+    if(this.data.cloudId){
+      //云百汇专用提交卡死
+      this.submitYbh();
+      return;
+    }
     if(mytag){
       return;
     }

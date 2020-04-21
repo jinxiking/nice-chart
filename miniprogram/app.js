@@ -53,7 +53,7 @@ App({
               }else{
                 var pages = getCurrentPages() 
   
-                if(pages[0].route == 'pages/home/index/index'){
+                if(pages[0].route == 'pages/home/index/index' || pages[0].route == 'pages/special/index/index'){
           
                   pages[0].onShow();
                   return;
@@ -106,7 +106,7 @@ App({
                     //可以继续本页面逻辑
                     var pages = getCurrentPages() 
   
-                    if(pages[0].route == 'pages/home/index/index'){
+                    if(pages[0].route == 'pages/home/index/index' || pages[0].route == 'pages/special/index/index'){
               
                       pages[0].onShow();
                       return;
@@ -138,7 +138,7 @@ App({
             // this.getBannerList();
             var pages = getCurrentPages() 
 
-            if(pages[0].route == 'pages/home/index/index'){
+            if(pages[0].route == 'pages/home/index/index' || pages[0].route == 'pages/special/index/index'){
                 
               pages[0].onShow();
               return;

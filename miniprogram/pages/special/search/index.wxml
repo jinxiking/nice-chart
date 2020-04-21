@@ -1,0 +1,16 @@
+<searchbar bindselectresult='searchAction' search="{{search}}" value='{{inputVal}}' focus='{{focus}}' id='header'></searchbar>
+
+<view class='content'> 
+  <view class='line'></view>
+  <view>
+    <view class='title'>大家都在搜</view>
+    <view class='hot'>
+      <view bindtap="search_hot">红苹果</view>
+      <view>红苹果红苹果</view>
+      <view>红苹果</view>
+      <view>红苹果</view>
+      <view>红苹果红苹果</view>
+      <view>红苹果红苹果红苹果</view>
+    </view>
+  </view>
+</view>

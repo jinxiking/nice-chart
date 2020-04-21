@@ -234,6 +234,9 @@ page{
   margin-left:-250rpx;
   z-index: 5;
 }
+.activelext{
+  color:#fff;
+}
 .bgg{
   background: #f5f5f5!important;
   color:#000!important;

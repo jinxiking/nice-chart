@@ -26,6 +26,7 @@
 .tobay{
   margin-top:20rpx;
   color:#FE1B42;
+  font-weight: 500;
 }
 
 .right{

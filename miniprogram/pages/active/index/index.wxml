@@ -13,7 +13,7 @@
     <image src='../../../images/active/zhuanpan_bg.png' class='mid_bg'></image>
     <view  wx:for='{{list}}' wx:key='index' class='num_{{index+1}} {{scrollCurrent == (index+1) ? "active" : ""}}'>
       <image src='{{item.logo}}' mode="widthFix" class='active_img'></image>
-      <view class='active_text {{scrollCurrent == (index+1) ? "active" : ""}}'>{{item.title}}</view>
+      <view class='{{scrollCurrent == (index+1) ? "activelext" : ""}} active_text'>{{item.title}}</view>
     </view>
     <!-- <view class='num_2 {{scrollCurrent == 2 ? "active" : ""}}'>2</view>
     <view class='num_3 {{scrollCurrent == 3 ? "active" : ""}}'>3</view>
