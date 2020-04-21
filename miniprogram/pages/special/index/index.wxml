@@ -15,6 +15,10 @@
     </view>
   </view>
   <view class='card_content'>
+    <view class='search_content'>
+      <image src='../../../images/home/search.png' class='search'></image>
+      <text class='text'>请输入您所需要的产品名称</text>
+    </view>
     <view class='card' wx:for='{{bottomList}}' wx:key='index' bindtap='topDetai' data-vid='{{item.campaign_id}}'> 
       <view class='img_content'>
         <image src='{{item.logo}}' class='nav_img'></image>
@@ -42,11 +46,6 @@
       <view class='button'  wx:if='{{item.status == 1}}'>去抢购 <image src='../../../images/home/right_white.png' class='right'></image></view>
 
       <view class='button backg'  data-vid='{{item.campaign_id}}' wx:if='{{item.status == 2}}'>已结束</view>
-    </view>
-
-    <view class='no_list_content' wx:if='{{!bottomList.length}}'>
-      <image src='../../../images/empty/nolist.png' class='nolist'></image>
-      <view class='no_list_text'>暂无秒杀活动</view>
     </view>
 
   </view>
