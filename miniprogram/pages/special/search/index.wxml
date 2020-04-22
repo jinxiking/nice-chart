@@ -2,7 +2,7 @@
 
 <view class='content'> 
   <view class='line'></view>
-  <view>
+  <view wx:if='{{!searchTag}}'>
     <view class='title'>大家都在搜</view>
     <view class='hot'>
       <view bindtap="search_hot">红苹果</view>
@@ -13,4 +13,41 @@
       <view>红苹果红苹果红苹果</view>
     </view>
   </view>
+  <view class='card_content' wx:if='{{searchTag}}'>
+    <view class='card' wx:for='{{bottomList}}' wx:key='index' bindtap='topDetai' data-vid='{{item.campaign_id}}'> 
+      <view class='img_content'>
+        <image src='{{item.logo}}' class='nav_img'></image>
+      </view>
+      <view class='shop_dro'>
+        <view class='shop_title {{item.status == 2?"timeD":""}}'>{{item.title}}</view>
+        <view class='shop_num' wx:if='{{item.status != 2}}'>{{item.status == 1?'剩余':'限量'}}{{item.num}}份</view>
+        <view class='number_line' wx:if='{{item.status == 1}}'>
+          <view class='line_content' style="width: {{ (item.total - item.num)/item.total*100 + '%'}}"></view>
+        </view>
+        <view class='shop_time' wx:if='{{item.status != 2}}'>{{item.status == 1?'倒计时':'距开始'}}
+   
+          <count-down c-class="red" 
+          target="{{item.targetTime}}"
+          v-if='{{item.targetTime}}'
+          show-day="{{false}}"
+          clear-timer='{{clearTimer}}'
+     
+          ></count-down>
+      
+        
+        </view>
+
+      </view>
+      <view class='button'  wx:if='{{item.status == 1}}'>去抢购 <image src='../../../images/home/right_white.png' class='right'></image></view>
+
+      <view class='button backg'  data-vid='{{item.campaign_id}}' wx:if='{{item.status == 2}}'>已结束</view>
+    </view>
+
+    <view class='no_list_content' wx:if='{{!bottomList.length}}'>
+      <image src='../../../images/empty/nolist.png' class='nolist'></image>
+      <view class='no_list_text'>暂无相关活动~</view>
+    </view>
+
+  </view>
+
 </view>

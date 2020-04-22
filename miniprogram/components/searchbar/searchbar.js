@@ -151,10 +151,11 @@ Component({
                 searchState: true
             })
         },
-        clearInput: function clearInput() {
+        clearInput: function clearInput(e) {
             this.setData({
                 value: ''
             });
+            this.inputChange(e);
             this.triggerEvent('clear');
         },
         inputFocus: function inputFocus(e) {
@@ -180,28 +181,17 @@ Component({
         inputChange: function inputChange(e) {
             var _this = this;
 
-            this.setData({
-                value: e.detail.value
-            });
-            this.triggerEvent('input', e.detail);
-            if (Date.now() - this.lastSearch < this.data.throttle) {
-                return;
-            }
+            clearTimeout(this.timerId);
             
             if (typeof this.data.search !== 'function') {
                 return;
             }
-            this.lastSearch = Date.now();
+            console.log(e.detail)
             this.timerId = setTimeout(function () {
-                _this.data.search(e.detail.value);
+                _this.data.search(e.detail.value)
             }, this.data.throttle);
         },
-        selectResult: function selectResult(e) {
-            var index = e.currentTarget.dataset.index;
-
-            var item = this.data.result[index];
-            this.triggerEvent('selectresult', { index: index, item: item });
-        }
+    
     }
 });
 

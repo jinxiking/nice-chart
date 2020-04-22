@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "count-down": "/components/coutDown/index"
+  },
   "navigationBarTitleText": "云百汇专场"
 }

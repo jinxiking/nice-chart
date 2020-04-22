@@ -1,20 +1,15 @@
 <!--miniprogram/pages/special/index/index.wxml-->
 <view class='page_content'>
   <view class='nav_bar'> 
-    <view>
-      蔬菜
-    </view>
-    <view>
-      蔬菜
-    </view>
-    <view>
-      蔬菜
-    </view>
-    <view>
-      蔬菜
+    <view wx:for='{{dataObj}}' wx:key='index' class='{{activeIndex == item.id?"actived":""}}' bindtap="setActiveIndex" data-index='{{item.id}}'>
+      {{item.describe}}
     </view>
   </view>
   <view class='card_content'>
+    <view class='search' bindtap="toSearch">
+      <image src='../../../images/home/search.png' class='search_img'></image>
+      <text>请输入您所需要的产品名称</text>
+    </view>
     <view class='card' wx:for='{{bottomList}}' wx:key='index' bindtap='topDetai' data-vid='{{item.campaign_id}}'> 
       <view class='img_content'>
         <image src='{{item.logo}}' class='nav_img'></image>
@@ -25,11 +20,14 @@
         <view class='number_line' wx:if='{{item.status == 1}}'>
           <view class='line_content' style="width: {{ (item.total - item.num)/item.total*100 + '%'}}"></view>
         </view>
+
+        <!-- wx:if='{{item.status == 1}}' -->
+        <!-- 暂时写死时间涉及时间计算明日再说 -->
         <view class='shop_time' wx:if='{{item.status != 2}}'>{{item.status == 1?'倒计时':'距开始'}}
-          <!-- wx:if='{{item.status == 1}}' -->
-          <!-- 暂时写死时间涉及时间计算明日再说 -->
+   
           <count-down c-class="red" 
-          target="{{targetTime}}"
+          target="{{item.targetTime}}"
+          v-if='{{item.targetTime}}'
           show-day="{{false}}"
           clear-timer='{{clearTimer}}'
           bindcallback="myLinsterner"
@@ -43,12 +41,6 @@
 
       <view class='button backg'  data-vid='{{item.campaign_id}}' wx:if='{{item.status == 2}}'>已结束</view>
     </view>
-
-    <view class='no_list_content' wx:if='{{!bottomList.length}}'>
-      <image src='../../../images/empty/nolist.png' class='nolist'></image>
-      <view class='no_list_text'>暂无秒杀活动</view>
-    </view>
-
   </view>
 </view>
 

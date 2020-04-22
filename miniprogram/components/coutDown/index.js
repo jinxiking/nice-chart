@@ -45,7 +45,6 @@ Component({
     },
     getLastTime () {
 
-     
       const data = this.data;
       const gapTime = Math.ceil((data.target - new Date().getTime()) / 1000);// 距离结束还有多少秒
       let time = '00:00:00';

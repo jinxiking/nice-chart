@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "searchbar": "/components/searchbar/searchbar"
+    "searchbar": "/components/searchbar/searchbar",
+    "count-down": "/components/coutDown/index"
   },
   "navigationBarTitleText": "搜索"
 }
