@@ -1,10 +1,11 @@
 <!--miniprogram/pages/special/index/index.wxml-->
+<wxs module="filter" src="../../../utils/public.wxs"></wxs>
 <view class='page_content'>
-  <view class='nav_bar'> 
+  <scroll-view   scroll-y="true" class='nav_bar'> 
     <view wx:for='{{dataObj}}' wx:key='index' class='{{activeIndex == item.id?"actived":""}}' bindtap="setActiveIndex" data-index='{{item.id}}'>
       {{item.describe}}
     </view>
-  </view>
+  </scroll-view>
   <scroll-view class='card_content'  scroll-y="true" bindscrolltolower='onReachBottom'>
     <view class='search_content'>
       <view class='search' bindtap="toSearch">
@@ -25,24 +26,30 @@
 
         <!-- wx:if='{{item.status == 1}}' -->
         <!-- 暂时写死时间涉及时间计算明日再说 -->
-        <view class='shop_time' wx:if='{{item.status != 2}}'>{{item.status == 1?'倒计时':'距开始'}}
-   
-          <count-down c-class="red" 
+        <view class='shop_time' wx:if='{{item.status != 2}}'>{{item.status == 1?'结束时间':'开始时间'}}
+          <text  wx:if='{{item.status == 0}}'>{{filter.formatDate(item.start_time,"YY-MM-DD")}}</text>
+          <text  wx:if='{{item.status == 1}}'>{{filter.formatDate(item.end_time,"YY-MM-DD")}}</text>
+          <!-- <count-down c-class="red" 
           target="{{item.targetTime}}"
           v-if='{{item.targetTime}}'
           show-day="{{false}}"
           clear-timer='{{clearTimer}}'
           bindcallback="myLinsterner"
-          ></count-down>
+          ></count-down> -->
       
         
         </view>
 
       </view>
-      <view class='button'  wx:if='{{item.status == 1}}'>去抢购 <image src='../../../images/home/right_white.png' class='right'></image></view>
+      <!-- <view class='button'  wx:if='{{item.status == 1}}'>去抢购 <image src='../../../images/home/right_white.png' class='right'></image></view>
 
-      <view class='button backg'  data-vid='{{item.campaign_id}}' wx:if='{{item.status == 2}}'>已结束</view>
+      <view class='button backg'  data-vid='{{item.campaign_id}}' wx:if='{{item.status == 2}}'>已结束</view> -->
     </view>
+    <view class='no_more'>没有更多了呦~</view>
+    <!-- <view class='no_list_content' wx:if='{{!bottomList.length}}'>
+      <image src='../../../images/empty/nolist.png' class='nolist'></image>
+      <view class='no_list_text'>暂无活动</view>
+    </view> -->
   </scroll-view>
 </view>
 

@@ -1,6 +1,6 @@
 <searchbar bindselectresult='searchAction' search="{{search}}" value='{{inputVal}}' focus='{{focus}}' id='header'></searchbar>
 
-<view class='content {{!searchTag?"bgf":""}}'> 
+<view class='content {{!searchTag?"bgf":""}}  {{!bottomList.length?"bgf":""}}'> 
   <view class='line'></view>
   <view wx:if='{{!searchTag}}'>
     <view class='title'>大家都在搜</view>
