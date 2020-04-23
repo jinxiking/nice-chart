@@ -10,10 +10,28 @@ Page({
     clearTimer : false,
     targetTime : '',
   
-
-    activeIndex : 1,
+      
+    activeIndex : '',
    
-    bottomList : []
+    bottomList : [],
+    page : {
+      page : 1,
+      pageSize : 20
+    },
+    finish : false,
+  },
+  onReachBottom: function () {
+    if(this.data.finish){
+      return;
+    }
+    let num = this.data.page.page;
+    this.setData({
+      page : {
+        page : num + 1,
+        pageSize : 20
+      }
+    })
+    this.getBottomList();
   },
   onShow:function(){
     var token = wx.getStorageSync('token') || '';
@@ -27,6 +45,14 @@ Page({
     } else {
       this.doLogin();
     }
+    this.setData({
+      bottomList : [],
+      page : {
+        page : 1,
+        pageSize : 20
+      },
+      finish : false,
+    })
   },
 
   /**
@@ -168,7 +194,7 @@ Page({
   //自定义事件
   topDetai(e){
     wx.navigateTo({
-      url: '/pages/home/detail/index?id=' + e.currentTarget.dataset.vid,
+      url: '/pages/home/detail/index?cloudId=' + e.currentTarget.dataset.vid,
     })
   },
   bindchange(index){
@@ -183,7 +209,7 @@ Page({
     }
     mytag = false;
     util.ajax({
-      url: '/v1/seckill/title',
+      url: '/v1/ybh/type/list',
       method: 'GET',
       data : {
         
@@ -195,31 +221,21 @@ Page({
       success: (res) => {
         mytag = true;
         this.setData({
-          dataObj : res.data
+          dataObj : res.data.list
         })
-        let tag = false;
-        for(var i in res.data){
-          if(res.data[i] == 1){
-            this.setData({
-              activeIndex : i
-            })
-            this.getBottomList(i);
-            tag = true;
-          }
-        }
-        if(!tag){
-          this.setData({
-            activeIndex : 1
-          })
-          this.getBottomList(1);
-        }
+        
+        this.setData({
+          activeIndex : res.data.list[0].id
+        })
+        this.getBottomList(res.data.list[0].id);
+        
         
       }
     })
   },
   getBottomList(i){
     util.ajax({
-      url: '/v1/seckill/campaigns/' + i,
+      url: '/v1/ybh/list/' + this.data.activeIndex + '/' + this.data.page.page + '/' + this.data.page.pageSize,
       method: 'GET',
       data : {
 
@@ -228,15 +244,25 @@ Page({
       success: (res) => {
       
         mytag = true;
-        this.setData({
-          bottomList : res.data
-        })
         let time = new Date().getTime();
-        if(res.data.length){
+        
+        for(var i = 0;i<res.data.list.length;i++){
+   
+          res.data.list[i].targetTime = time + res.data.list[i].down_time*1000
+
+        }
+
+        let list = this.data.bottomList.concat(res.data.list);
+
+        this.setData({
+          bottomList : list
+        })
+
+   
+        if (res.data.total == 0 || res.data.total  == this.data.page.page){
           this.setData({
-            targetTime : time + res.data[0].down_time*1000
+            finish : true
           })
-          
         }
   
         
@@ -246,25 +272,24 @@ Page({
   getBannerList(){
     //本页面逻辑
     this.getTitle();
-
-    util.ajax({
-      url: '/v1/banner/2',
-      method: 'GET',
-      data : {
-        type : '2',
-      },
-      success: (res) => {
-        
-        this.setData({
-          bannerList: res.data
-        });
-      }
-    })
   },
   setActiveIndex(e){
     this.setData({
-      activeIndex : e.currentTarget.dataset.index
+      activeIndex : e.currentTarget.dataset.index,
+      page : {
+        page : 1,
+        pageSize : 20
+      },
+      finish : false,
+      
+      bottomList : []
+     
     })
-    this.getBottomList(e.currentTarget.dataset.index);
+    this.getBottomList();
+  },
+  toSearch(){
+    wx.navigateTo({
+      url: '/pages/special/search/index',
+    })
   }
 })

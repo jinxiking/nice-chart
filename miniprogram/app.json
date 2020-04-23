@@ -1,9 +1,13 @@
 {
   "pages": [
     "pages/special/index/index",
+    "pages/special/search/index",
+
+    
+
     "pages/home/detail/index",
     "pages/home/index/index",
-    "pages/special/search/index",
+
     "pages/active/index/index",
     "pages/home/advertising/index",
     "pages/my/couponDetail/index",
@@ -32,7 +36,7 @@
       {
         "pagePath": "pages/special/index/index",
         "text": "云百汇",
-        "iconPath": "/images/home/four.png",
+        "iconPath": "/images/home/four_1.png",
         "selectedIconPath": "/images/home/four.png",
         "auth": 0
       },

@@ -127,7 +127,7 @@ Page({
     }
     mytag = true;
     util.ajax({
-      url: '/v1/ybh/seckill/' + this.data.id,
+      url: '/v1/ybh/seckill/' + this.data.cloudId,
       method: 'POST',
       data : {
         
