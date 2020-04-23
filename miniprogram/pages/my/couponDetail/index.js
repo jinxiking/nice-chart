@@ -85,7 +85,7 @@ Page({
         
        
         for(var i = 0;i<res.data.list.length;i++){
-          let content= res.data.list[i]['remark'].replace(/<img/ig, '<img style="width:313px!important; border-radius: 4px;"');
+          let content= res.data.list[i]['remark'].replace(/<img/ig, '<img style="width:100%!important; border-radius: 4px;"');
           
           res.data.list[i]['remark'] = content;
         }

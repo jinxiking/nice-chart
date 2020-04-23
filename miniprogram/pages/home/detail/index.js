@@ -84,7 +84,7 @@ Page({
       },
       success: (res) => {
 
-        let content= res.data.remark.replace(/<img/ig, '<img style="width:313px!important; border-radius: 4px;"');
+        let content= res.data.remark.replace(/<img/ig, '<img style="width:100%!important; border-radius: 4px;"');
        
         res.data.remark = content;
      
@@ -159,11 +159,12 @@ Page({
     })
   },
   submit(){
-    if(this.data.is_seckill == 1){
-      wx.showToast({
-        title: '已经秒杀过',
-        icon : 'none'
-      })
+    console.log(this.data.is_seckill)
+    if(this.data.detail.is_seckill == 1){
+      // wx.showToast({
+      //   title: '已经秒杀过',
+      //   icon : 'none'
+      // })
       return;
     }
 

@@ -1,4 +1,11 @@
 /* miniprogram/pages/my/activeDetail/index.wxss */
+Page{
+  background: #fff;
+}
+.line_block{
+  height: 24rpx;
+  background: #f5f5f5;
+}
 .nolist{
   width: 340rpx;
   height: 340rpx;
@@ -13,7 +20,7 @@
   font-size: 28rpx;
 }
 .content{
-  padding:24rpx 0rpx;
+  /* padding:24rpx 0rpx; */
 }
 /* .detail_bg{
   position: absolute;
@@ -127,7 +134,7 @@
   margin-left: 5rpx;
 }
 .typePiker{
-  margin-top:24rpx;
+  /* margin-top:24rpx; */
 }
 
 .table_item{

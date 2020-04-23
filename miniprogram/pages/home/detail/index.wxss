@@ -71,13 +71,14 @@ page{
   top:0;
   left:0; */
   z-index: 10;
+  padding:0 28rpx;
 }
 .card_img{
   height: 160rpx;
   width: 160rpx;
 }
 .card_text{
-  margin-left: 28rpx;
+  /* margin-left: 28rpx; */
 }
 .card_text_name{
   color:#333333;

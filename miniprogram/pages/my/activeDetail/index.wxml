@@ -51,7 +51,7 @@
       </view>
   </picker>
 </view>
-
+<view class='line_block'></view>
 <view class='time_picker typePiker'>
     <view>筛选</view>
     <picker bindchange="bindShopPicker" value="{{shopIndex}}" range="{{shopListRealArr}}" class='shopPiker' bindchange='bindpikerChange'>
@@ -62,7 +62,7 @@
       </view>
     </picker>
 </view>
-
+<view class='line_block'></view>
 <view class='content'>
 
   <view class='detail_content'>

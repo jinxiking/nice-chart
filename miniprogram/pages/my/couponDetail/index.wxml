@@ -57,8 +57,8 @@
     <view class='shak_content'>
       <image src='../../../images/active/close.png' mode="widthFix" class='close_noe' bindtap="closeShak"></image>
       <view class='shak_title'>使用说明</view>
-      <view class='rich_text'>
+      <scroll-view   scroll-y="true" class='rich_text'>
         <rich-text nodes="{{chose_node}}" bindtap="tap" class='rich'></rich-text>
-      </view>
+      </scroll-view>
     </view>
 </view>

@@ -103,6 +103,7 @@ page{
   text-align: center;
   margin: 40rpx 0rpx;
   color:#181515;
+  font-size: 24rpx;
 }
 
 .card_content{

@@ -23,13 +23,15 @@
 
 }
 .rich{
-  padding: 24rpx;
+  padding:0rpx 24rpx;
 }
 .rich_text{
   max-height: 800rpx;
   display: block;
-  margin-left: 32rpx;
-  margin-right: 32rpx;
+  /* margin-left: 32rpx;
+  margin-right: 32rpx; */
+  padding: 0 32rpx;
+  width: auto;
 }
 .mt_rich{
   text-align: center;
