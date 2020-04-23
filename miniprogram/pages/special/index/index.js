@@ -244,6 +244,9 @@ Page({
       success: (res) => {
       
         mytag = true;
+        if(!res.data.list){
+          return;
+        }
         let time = new Date().getTime();
         
         for(var i = 0;i<res.data.list.length;i++){
