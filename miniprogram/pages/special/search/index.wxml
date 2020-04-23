@@ -1,6 +1,6 @@
 <searchbar bindselectresult='searchAction' search="{{search}}" value='{{inputVal}}' focus='{{focus}}' id='header'></searchbar>
 
-<view class='content'> 
+<view class='content {{!searchTag?"bgf":""}}'> 
   <view class='line'></view>
   <view wx:if='{{!searchTag}}'>
     <view class='title'>大家都在搜</view>
@@ -21,9 +21,9 @@
       <view class='shop_dro'>
         <view class='shop_title {{item.status == 2?"timeD":""}}'>{{item.title}}</view>
         <view class='shop_num' wx:if='{{item.status != 2}}'>{{item.status == 1?'剩余':'限量'}}{{item.num}}份</view>
-        <view class='number_line' wx:if='{{item.status == 1}}'>
+        <!-- <view class='number_line' wx:if='{{item.status == 1}}'>
           <view class='line_content' style="width: {{ (item.total - item.num)/item.total*100 + '%'}}"></view>
-        </view>
+        </view> -->
         <view class='shop_time' wx:if='{{item.status != 2}}'>{{item.status == 1?'倒计时':'距开始'}}
    
           <count-down c-class="red" 
