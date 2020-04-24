@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/my/index/index",
     "pages/special/index/index",
     "pages/special/search/index",
 
@@ -9,7 +10,7 @@
     "pages/active/index/index",
     "pages/home/advertising/index",
     "pages/my/couponDetail/index",
-    "pages/my/index/index",
+    
     "pages/my/mesCenter/index",
     "pages/my/question/index",
     "pages/home/login/index",
@@ -33,7 +34,7 @@
     "list": [
       {
         "pagePath": "pages/special/index/index",
-        "text": "云百汇",
+        "text": "恒生",
         "iconPath": "/images/home/four_1.png",
         "selectedIconPath": "/images/home/four.png",
         "auth": 0

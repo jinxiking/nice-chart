@@ -2,5 +2,5 @@
   "usingComponents": {
     "count-down": "/components/coutDown/index"
   },
-  "navigationBarTitleText": "云百汇专场"
+  "navigationBarTitleText": "恒生专场"
 }
