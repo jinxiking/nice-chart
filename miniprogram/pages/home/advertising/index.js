@@ -32,7 +32,7 @@ Page({
           if(num == -1){
             clearInterval(timer);
             wx.switchTab({
-              url: '/pages/home/index/index',
+              url: '/pages/special/index/index',
             })
           }
           this.setData({

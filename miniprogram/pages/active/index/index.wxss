@@ -48,13 +48,15 @@ page{
 }
 .to_coupon{
   padding: 8rpx 20rpx;
-  background: #9D2203;
+  background: rgb(222,90,42);
   font-size:26rpx;
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
   color:rgba(255,255,255,1);
   border-radius: 25rpx;
   margin-top: 28rpx;
+  /* opacity:0.3; */
+  color:#FFFFFF!important;
 }
 
 .turntable{
@@ -142,6 +144,7 @@ page{
   position: relative;
   z-index: 100;
   padding:24rpx 60rpx;
+  padding-bottom: 60rpx;
 
 }
 .swiper_content{
@@ -154,14 +157,14 @@ page{
   overflow: hidden;
 }
 .swiper_now{
-  margin-top: -140rpx;
+  margin-top: -130rpx;
   overflow: hidden;
-  height: 70px;
+  height: 60px;
 }
 .item_swiper view{
   line-height: 70rpx;
   text-align: center;
-  color:#fff;
+  color:#FFD0B0;
   font-size: 24rpx;
 
 }
@@ -188,17 +191,18 @@ page{
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-
   text-align: center;
-  padding-top: 30%;
-
+  padding-top: 160rpx;
 }
 
 .first_view{
   z-index: 10;
   position: relative;
-  color:#FB643C;
+  color:#FF845E;
+  font-size:30rpx;
   width: 300rpx;
+  font-weight:500;
+  line-height:42rpx;
 }
 .zhongjiangImg{
   position: absolute;

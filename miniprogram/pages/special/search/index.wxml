@@ -1,3 +1,4 @@
+<wxs module="filter" src="../../../utils/public.wxs"></wxs>
 <searchbar bindselectresult='searchAction' search="{{search}}" value='{{inputVal}}' focus='{{focus}}' id='header'></searchbar>
 
 <view class='content {{!searchTag?"bgf":""}}  {{!bottomList.length?"bgf":""}}'> 
@@ -25,14 +26,15 @@
           <view class='line_content' style="width: {{ (item.total - item.num)/item.total*100 + '%'}}"></view>
         </view> -->
         <view class='shop_time' wx:if='{{item.status != 2}}'>{{item.status == 1?'倒计时':'距开始'}}
-   
-          <count-down c-class="red" 
+          <text  wx:if='{{item.status == 0}}'>{{filter.formatDate(item.start_time,"YY-MM-DD")}}</text>
+          <text  wx:if='{{item.status != 0}}'>{{filter.formatDate(item.end_time,"YY-MM-DD")}}</text>
+          <!-- <count-down c-class="red" 
           target="{{item.targetTime}}"
           v-if='{{item.targetTime}}'
           show-day="{{false}}"
           clear-timer='{{clearTimer}}'
      
-          ></count-down>
+          ></count-down> -->
       
         
         </view>
@@ -42,6 +44,8 @@
 
       <view class='button backg'  data-vid='{{item.campaign_id}}' wx:if='{{item.status == 2}}'>已结束</view>
     </view>
+
+    <view class='no_more'   wx:if='{{searchTag && bottomList.length}}'>亲人，真的到底了~</view>
 
     <view class='no_list_content' wx:if='{{!bottomList.length}}'>
       <image src='../../../images/empty/nolist.png' class='nolist'></image>

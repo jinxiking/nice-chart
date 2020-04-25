@@ -15,7 +15,7 @@ Page({
     luckCode : '',
     list : [1,2,3,4,5,6,7,8],
     currents : 1,
-    scrollCurrent : 1,
+    scrollCurrent : 0,
     bannerList : [
      
     ],
@@ -161,7 +161,9 @@ Page({
         
       },
       success: (res) => {
-        
+        this.setData({
+          scrollCurrent : 1
+        })
         if(res.data.campaign_id === 0){
           res.data.campaign_id = -1
         }

@@ -41,16 +41,18 @@
   font-size:30rpx;
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
-  color:rgba(102,102,102,1);
-  margin-top: 24rpx;
+  color:#666666;
+  margin-top: 42rpx;
+  line-height: 42rpx;
 }
 .bottom_line{
   border-bottom: 1rpx solid #F5F5F5;
   margin-bottom: 30rpx;
-  padding-bottom: 30rpx;
+  padding-bottom: 42rpx;
   max-height: 38rpx;
   overflow: hidden;
   transition: all ease 0.5s;
+
 }
 .bottom_line .right{
   transition: all ease 0.5s;

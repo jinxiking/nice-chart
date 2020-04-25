@@ -1,24 +1,22 @@
 {
   "pages": [
-    "pages/my/index/index",
+    "pages/home/advertising/index",
     "pages/special/index/index",
+    "pages/my/questionDetail/index",
+    "pages/my/index/index",
     "pages/special/search/index",
-
     "pages/home/detail/index",
     "pages/home/index/index",
-
     "pages/active/index/index",
-    "pages/home/advertising/index",
-    "pages/my/couponDetail/index",
     
+    "pages/my/couponDetail/index",
     "pages/my/mesCenter/index",
     "pages/my/question/index",
     "pages/home/login/index",
     "pages/my/coupon/index",
     "pages/my/activeDetail/index",
     "pages/my/activeList/index",
-    "pages/my/mesDetail/index",
-    "pages/my/questionDetail/index"
+    "pages/my/mesDetail/index"
   ],
   "window": {
     "backgroundColor": "#fff",
@@ -34,7 +32,7 @@
     "list": [
       {
         "pagePath": "pages/special/index/index",
-        "text": "恒生",
+        "text": "云百惠",
         "iconPath": "/images/home/four_1.png",
         "selectedIconPath": "/images/home/four.png",
         "auth": 0

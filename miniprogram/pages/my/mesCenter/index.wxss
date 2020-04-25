@@ -14,6 +14,9 @@ page{
   margin-top:20rpx;
   color:#FE1B42;
 }
+.no_border{
+  border: none!important;
+}
 .no_coupon{
   width: 340rpx;
   height: 340rpx;

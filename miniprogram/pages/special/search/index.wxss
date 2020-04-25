@@ -10,6 +10,12 @@
 .bgf{
   background: #fff!important;
 }
+.no_more{
+  text-align: center;
+  margin: 40rpx 0rpx;
+  color:#181515;
+  font-size: 24rpx;
+}
 .no_list_text{
   margin-top: 20rpx;
   color:#9DA3B4;

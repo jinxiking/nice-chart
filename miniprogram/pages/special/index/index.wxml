@@ -45,7 +45,7 @@
 
       <view class='button backg'  data-vid='{{item.campaign_id}}' wx:if='{{item.status == 2}}'>已结束</view> -->
     </view>
-    <view class='no_more'>没有更多了呦~</view>
+    <view class='no_more'>亲人，真的到底了~</view>
     <!-- <view class='no_list_content' wx:if='{{!bottomList.length}}'>
       <image src='../../../images/empty/nolist.png' class='nolist'></image>
       <view class='no_list_text'>暂无活动</view>

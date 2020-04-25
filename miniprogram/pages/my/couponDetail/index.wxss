@@ -19,7 +19,7 @@
   position: absolute;
   z-index: 1;
   width: 100%;
-  height: 800rpx;
+  height: 670rpx;
 
 }
 .rich{
@@ -43,7 +43,7 @@
   position: absolute;
   left:50%;
   margin-left: -30rpx;
-  bottom:-190rpx;
+  bottom:-120rpx;
 }
 .shak_title{
   text-align: left;
@@ -52,7 +52,7 @@
 }
 .shak_content{
   background: #fff;
-  width: 650rpx;
+  width: 550rpx;
   margin-top: -250rpx;
   position: relative;
   border-radius: 8rpx;
@@ -72,7 +72,7 @@
 
 }
 .img_text{
-  margin-top:170rpx;
+  margin-top:100rpx;
   margin-bottom:80rpx;
   color:#FE1B42;
   font-size: 50rpx;
@@ -226,8 +226,10 @@
   text-align: center;
   color:#9DA3B4;
   font-size: 28rpx;
+  margin-top: 120rpx;
 }
 .tobay{
   margin-top:20rpx;
   color:#FE1B42;
+  font-weight: bold;
 }
