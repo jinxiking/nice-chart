@@ -1,0 +1,8 @@
+<!--miniprogram/pages/special/welcome/index.wxml-->
+<view class='welcome'>
+  <image src='../../../images/active/yunbaihui.jpg' mode="widthFix" class='close'></image>
+  <view class='button' bindtap="toYBH">
+    进入专场
+  </view>
+</view>
+

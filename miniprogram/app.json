@@ -1,14 +1,18 @@
 {
   "pages": [
     "pages/home/advertising/index",
-    "pages/special/index/index",
-    "pages/my/questionDetail/index",
+    "pages/active/index/index",
+
+
+    "pages/special/welcome/index",
     "pages/my/index/index",
+    "pages/special/index/index",
+
+    "pages/my/questionDetail/index",
     "pages/special/search/index",
     "pages/home/detail/index",
     "pages/home/index/index",
-    "pages/active/index/index",
-    
+
     "pages/my/couponDetail/index",
     "pages/my/mesCenter/index",
     "pages/my/question/index",

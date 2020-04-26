@@ -86,7 +86,8 @@ Page({
 
         if(res.authSetting['scope.userLocation'] && (res.authSetting['scope.userInfo'] || !this.data.userHave)){
           wx.switchTab({
-            url: '/pages/home/index/index',
+            // url: '/pages/home/index/index',
+            url: '/pages/special/index/index',
           })
         }
       }

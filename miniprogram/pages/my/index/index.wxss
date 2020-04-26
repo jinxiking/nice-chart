@@ -27,6 +27,21 @@
   z-index: 9;
   margin-left: 34rpx;
 }
+.tel_content{
+  width: 500rpx;
+  height: 100rpx;
+  background: #fff;
+  position: absolute;
+  left:50%;
+  margin-left: -250rpx;
+  margin-top: 160rpx;
+  border-radius: 16rpx;
+}
+.tel{
+  height: 100rpx;
+  border-radius: 16rpx;
+  border: 1px solid #f5f5f5;
+}
 .sacn_text{
   font-size:24rpx;
   font-family:PingFangSC-Regular,PingFang SC;
@@ -38,7 +53,7 @@
   height: 84rpx;
   position: absolute;
   top:24rpx;
-  z-index: 2;
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,5 +175,38 @@
 .contactBtn::after{
   border:none!important;
 }
+.shak_title{
+  text-align: left;
+  padding: 24rpx;
+  padding-bottom: 0;
+}
+.shak_content{
+  background: #fff;
+  width: 550rpx;
+  margin-top: -250rpx;
+  position: relative;
+  border-radius: 8rpx;
+}
+.close_noe{
+  width: 500rpx;
+  height: 500rpx;
+  position: absolute;
+  left:50%;
+  margin-left: -250rpx;
+  margin-top: 160rpx;
+}
+.shak{
+  background: #000;
+  position: fixed;
+  z-index: 100000;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
+}
 

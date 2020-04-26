@@ -2,9 +2,7 @@
 let flag = false;
 App({
   onLaunch: function () {
-    
     var token = wx.getStorageSync('token') || '';
- 
     // 登录过
     if (token) {
       this.globalData.token = token;
@@ -162,12 +160,19 @@ App({
       }
     })
   },
-
+  setShare(shareObj){
+    return {
+      title: '我的标题就是我',
+      path: '/pages/special/index/index',
+      imageUrl : ''
+    }
+  },
   globalData: {
+    // url: 'https://ylapi.luckywb.com/api',
     url: 'https://yulin.luckywb.com/api',
     userInfo: null,
     token: '',
-    latitude : '39.90469',
-    longitude : '116.40717',
+    latitude : '',
+    longitude : '',
   }
 })

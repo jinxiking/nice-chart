@@ -14,14 +14,54 @@ Page({
       consume_num : 0,
 
     },
+    tel : '',
+    choseOpenId : '',
+    detailShowTag : true,
+    detailShowTagsOpen : true,
     showOneButtonDialog: false,
-    oneButton: [{text: '确定'}],
+    oneButton: [{text: '取消'},{text: '确定'}],
   },
   tapDialogButton(e) {
       this.setData({
           dialogShow: false,
           showOneButtonDialog: false
       })
+  },
+  tapDialogButtonOpen(r){
+    if(r.detail.index){
+      if(!this.data.tel){
+        wx.showToast({
+          title: '请输入金额',
+        })
+        return
+      }else{
+        //添加用户使用次数
+         util.ajax({
+          url:'/v1/ybh/add',
+          method: 'POST',
+          data : {
+            openId : this.data.choseOpenId,
+            moneyTmp : this.data.tel
+          },
+          success: (ress) => {
+            wx.showToast({
+              title: '添加成功',
+            })
+            this.setData({
+              detailShowTagsOpen : true,
+              tel : ''
+            })
+
+          }
+        })
+
+      }
+    }else{
+      this.setData({
+        detailShowTagsOpen : true,
+        tel : ''
+      })
+    }
   },
   tapOneDialogButton(e) {
       this.setData({
@@ -43,20 +83,23 @@ Page({
     wx.scanCode({
       success : res=>{
         console.log(res)
-        
-        util.ajax({
-          url:'/v1/code/info/' + res.result,
-          method: 'GET',
-          data : {
-            
-          },
-          success: (ress) => {
-
-            wx.navigateTo({
-              url: '/pages/home/detail/index?useId=' + ress.data.id + '&comeId=' + res.result,
-            })
-          }
+        this.setData({
+          detailShowTagsOpen : false,
+          choseOpenId : res.result
         })
+        // util.ajax({
+        //   url:'/v1/code/info/' + res.result,
+        //   method: 'GET',
+        //   data : {
+            
+        //   },
+        //   success: (ress) => {
+
+        //     wx.navigateTo({
+        //       url: '/pages/home/detail/index?useId=' + ress.data.id + '&comeId=' + res.result,
+        //     })
+        //   }
+        // })
         // wx.request({
         //   url:res.result,
         //   data :{
@@ -104,6 +147,23 @@ Page({
        })
       }
     })
+  },
+  telInput(value){
+    this.setData({
+      tel : value.detail.value
+    })
+  },
+
+  showScan(){
+    this.setData({
+      detailShowTag : false,
+    })    
+  },
+  closeMask(){
+    this.setData({
+      detailShowTag : true,
+      detailShowTagsOpen : true
+    })  
   },
  
   toMes(){

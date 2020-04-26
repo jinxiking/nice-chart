@@ -93,7 +93,6 @@ Page({
     let _this = this;
     wx.login({
       success: res => {
-        
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
           url: app.globalData.url + '/v1/user/login',
@@ -172,8 +171,18 @@ Page({
         }else{
           //num为0不需要更新用户做更新，只需要验证是否进行对位置授权
           if(res.authSetting['scope.userLocation']){
+            wx.getLocation({
+              success :res=>{
+                console.log(res)
+                app.globalData.latitude = res.latitude;
+                app.globalData.longitude = res.longitude;
+         
+                
+              }
+            })
             //可以继续本页面逻辑
             this.getBannerList();
+            
           }else{
             wx.redirectTo({
               url: '/pages/home/login/index',
@@ -294,5 +303,17 @@ Page({
     wx.navigateTo({
       url: '/pages/special/search/index',
     })
+  },
+  onShareAppMessage(){
+    // app.setShare();
+
+    var shareObj = {
+  　　　　title: "云百惠",        
+  　　　　path: '/pages/special/welcome/index',      
+  　　　　imageUrl: '/images/active/yunbaihui.png',    
+  　　}
+      
+    return shareObj;
+    
   }
 })

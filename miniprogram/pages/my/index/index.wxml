@@ -1,16 +1,16 @@
 <!--miniprogram/pages/my/index/index.wxml-->
 <view class='my_top'>
-  <view class='scan' wx:if='{{detail.is_shop == 1}}' bindtap="toScan">
+  <view class='scan' wx:if='{{detail.is_shop == 3}}' bindtap="toScan">
    
   </view>
-  <view class='scan_action' bindtap="toScan" wx:if='{{detail.is_shop == 1}}'>
+  <view class='scan_action' bindtap="toScan" wx:if='{{detail.is_shop == 3}}'>
     <image src='../../../images/my/scan.png' mode="widthFix" class='scan_img'></image>
     <text class='sacn_text'>扫一扫</text>
   </view>
 
   <view class='user'> 
 
-    <image src='{{detail.icon}}' mode="widthFix" class='user_img'></image>
+    <image src='{{detail.icon}}' mode="widthFix" class='user_img' bindtap="showScan"></image>
   </view>
 
   <view class='user_name'> 
@@ -39,7 +39,7 @@
 
 <view class='my_cont'>
   <view class='card'> 
-    <view class='card_item' bindtap="toActive"  wx:if='{{detail.is_shop == 1}}'>
+    <view class='card_item' bindtap="toActive"  wx:if='{{detail.is_shop == 1 || detail.is_shop == 3}}'>
       <view class='card_left'>
         <image src='../../../images/my/icon_1.png' mode="widthFix" class='icon_img_1'></image>
         <text class='card_name'>我的活动</text>
@@ -110,7 +110,7 @@
         <image src='../../../images/my/icon_5.png' mode="widthFix" class='icon_img_1'></image>
         <text class='card_name'>商务合作微信：xxxxx</text>
       </view>
-
+        
       <view class='card_right'>
           <image src='../../../images/home/right.png'  class='right'></image>
       </view>
@@ -127,3 +127,21 @@
         <view>{{title}}</view>
     </mp-dialog>
 </view>
+
+<view class='shak detail_shak' hidden="{{detailShowTag}}" catchtouchmove="preventTouchMove" bindtap="closeMask">
+    <image src='{{detail.url_code}}' class='close_noe' bindtap="closeShak"></image>
+</view>
+
+
+<view class="page">
+    <mp-dialog title="提示" show="{{!detailShowTagsOpen}}" bindbuttontap="tapDialogButtonOpen" buttons="{{oneButton}}">
+        <input class='tel' type='number' value='{{tel}}' maxlength='11' placeholder='请输入金额' bindinput="telInput"></input>
+    </mp-dialog>
+</view>
+
+<!-- <view class='shak detail_shak' hidden="{{detailShowTagsOpen}}" catchtouchmove="preventTouchMove">
+  <view class='tel_content'>
+    <input class='tel' type='number' value='{{tel}}' maxlength='11' placeholder='请输入金额' bindinput="telInput"></input>
+  </view>
+
+</view> -->

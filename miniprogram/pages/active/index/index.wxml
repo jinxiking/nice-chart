@@ -22,14 +22,19 @@
     <view class='num_6 {{scrollCurrent == 6 ? "active" : ""}}'>6</view>
     <view class='num_7 {{scrollCurrent == 7 ? "active" : ""}}'>7</view>
     <view class='num_8 {{scrollCurrent == 8 ? "active" : ""}}'>8</view> -->
-    <view class='num_9 {{(isExists)?"bgg":""}}' bindtap='begin'>
-      <view>{{(isExists)?'已经':'开始'}}</view>
+    <view class='num_9 {{(!num)?"bgg":""}}' bindtap='begin'>
+      <view>{{(!num)?'已经':'开始'}}</view>
       <view>抽奖</view>
     </view>
   </view>
   
-  <view class='scroll_tips'>
-    温馨提示：每个账号每天只可转取一次呦
+  <view class='scroll_tips' wx:if='{{num}}'>
+    温馨提示：您还可以抽{{num}}次~
+    
+  </view>
+
+  <view class='scroll_tips' wx:if='{{!num}}'>
+    温馨提示：抽奖次数使用完毕了呦~
   </view>
 
   <view class='winning'>

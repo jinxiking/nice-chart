@@ -26,7 +26,7 @@ Page({
             imgPath : res.data.data[0].src
           })
         }
-
+        
         let timer = setInterval(()=>{
           let num = this.data.index - 1;
           if(num == -1){

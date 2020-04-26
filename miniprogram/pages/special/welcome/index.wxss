@@ -1,0 +1,22 @@
+/* miniprogram/pages/special/welcome/index.wxss */
+.close{
+  width: 100%;
+}
+.welcome{
+  display: flex;
+  position: relative;
+}
+.button{
+  width: 95%;
+  position: absolute;
+  background: #f5c11f;
+  height: 80rpx;
+  border-radius: 40rpx;
+  bottom: 20rpx;
+  left:2.5%;
+  color:#af7214;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 600;
+}

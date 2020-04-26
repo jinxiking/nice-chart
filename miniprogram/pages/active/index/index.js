@@ -33,7 +33,8 @@ Page({
     },
     messageCont : [
 
-    ]
+    ],
+    num : 0
   },
   onShow:function(){
     this.scroller();
@@ -133,7 +134,8 @@ Page({
        this.setData({
         list : res.data.list,
         luckCode : res.data.luckCode,
-        isExists : res.data.isExists
+        isExists : res.data.isExists,
+        num : res.data.num,
        })
       }
     })
@@ -146,7 +148,7 @@ Page({
   },
   begin(){
 
-    if(this.data.mytag || this.data.isExists){
+    if(this.data.mytag || !this.data.num){
       return;
     }
     this.setData({
@@ -247,7 +249,9 @@ Page({
                         //减速第六层循环
                         _this.setData({
                           shak_show : false,
-                          isExists : true
+                          isExists : true,
+                          num : this.data.num -1,
+                          mytag : false
                         })
                         
                       }
