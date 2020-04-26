@@ -35,7 +35,6 @@ Page({
   },
   onShow:function(){
     var token = wx.getStorageSync('token') || '';
-    console.log(token);
     // 登录过
     if (token) {
       app.globalData.token = token;

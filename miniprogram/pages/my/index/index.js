@@ -40,8 +40,8 @@ Page({
           url:'/v1/ybh/add',
           method: 'POST',
           data : {
-            openId : this.data.choseOpenId,
-            moneyTmp : this.data.tel
+            open_id : this.data.choseOpenId,
+            money : this.data.tel
           },
           success: (ress) => {
             wx.showToast({
