@@ -24,8 +24,20 @@ Page({
   onLoad: function (options) {
 
     //是否商户直接微信扫码进入
-    const scene = decodeURIComponent(options.scene)
-    
+    if(options.scene){
+      let scene=decodeURIComponent(options.scene);
+      //&是我们定义的参数链接方式
+      let useId=scene.split("&")[0];
+      let comeId=scene.split('&')[1];
+      //其他逻辑处理。。。。。
+      this.setData({
+        eid : useId,
+        id : useId,
+        comeId : comeId,
+      })
+      this.getDetail(useId);
+      return;
+    }
     
     if(options.id){
       this.setData({

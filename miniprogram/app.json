@@ -1,10 +1,8 @@
 {
   "pages": [
+    "pages/special/welcome/index",
     "pages/home/advertising/index",
     "pages/active/index/index",
-
-
-    "pages/special/welcome/index",
     "pages/my/index/index",
     "pages/special/index/index",
 

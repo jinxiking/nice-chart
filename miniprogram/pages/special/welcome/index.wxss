@@ -5,8 +5,14 @@
 .welcome{
   display: flex;
   position: relative;
+  flex-direction: column;
+  padding-bottom: 150rpx;
 }
-.button{
+.btn{
+  position: fixed;
+  bottom: 0;
+}
+/* .button{
   width: 95%;
   position: absolute;
   background: #f5c11f;
@@ -19,4 +25,4 @@
   text-align: center;
   font-size: 30rpx;
   font-weight: 600;
-}
+} */
