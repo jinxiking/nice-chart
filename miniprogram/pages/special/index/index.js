@@ -135,7 +135,7 @@ Page({
     
     wx.getSetting({
       success : (res)=>{
-        console.log(res)
+    
         if(num == 1){
           //如果已经授权用户信息直接获取
 
@@ -172,7 +172,7 @@ Page({
           if(res.authSetting['scope.userLocation']){
             wx.getLocation({
               success :res=>{
-                console.log(res)
+      
                 app.globalData.latitude = res.latitude;
                 app.globalData.longitude = res.longitude;
          
