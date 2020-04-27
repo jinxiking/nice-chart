@@ -1,4 +1,3 @@
-// miniprogram/pages/active/index/index.js
 const util = require('../../../utils/ajax.js');
 // let mytag = false;
 let timer = '';
@@ -15,9 +14,10 @@ Page({
     luckCode : '',
     list : [1,2,3,4,5,6,7,8],
     currents : 1,
+    scrollCurrent : 1,
     scrollCurrent : 0,
     bannerList : [
-     
+
     ],
     indicatorDotss: false,
     verticals: true,
@@ -32,9 +32,7 @@ Page({
       pageSize : 20
     },
     messageCont : [
-
-    ],
-    num : 0
+    ]
   },
   onShow:function(){
     this.scroller();
@@ -49,7 +47,6 @@ Page({
       autoplays : false
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -134,21 +131,18 @@ Page({
        this.setData({
         list : res.data.list,
         luckCode : res.data.luckCode,
-        isExists : res.data.isExists,
-        num : res.data.num,
+        isExists : res.data.isExists
        })
       }
     })
   },
   scroller(){
-
   },
   stopTouchMove(){
     return false;
   },
   begin(){
-
-    if(this.data.mytag || !this.data.num){
+    if(this.data.mytag || this.data.isExists){
       return;
     }
     this.setData({
@@ -160,9 +154,10 @@ Page({
       url: '/v1/start/campaign/' + this.data.luckCode,
       method: 'GET',
       data : {
-        
+
       },
       success: (res) => {
+
         this.setData({
           scrollCurrent : 1
         })
@@ -178,9 +173,7 @@ Page({
             })
             num = 40 + i + 1;
           }
-
         }
-
         this.interval(num);
         
       },
@@ -249,9 +242,7 @@ Page({
                         //减速第六层循环
                         _this.setData({
                           shak_show : false,
-                          isExists : true,
-                          num : this.data.num -1,
-                          mytag : false
+                          isExists : true
                         })
                         
                       }
@@ -259,19 +250,16 @@ Page({
                         scrollCurrent: num
                       })
                     },300)
-
                   }
                   _this.setData({
                     scrollCurrent: num
                   })
                 }, 270)
-
               }
               _this.setData({
                 scrollCurrent: num
               })
             }, 150)
-
           }
           _this.setData({
             scrollCurrent: num
