@@ -1,5 +1,6 @@
 // miniprogram/pages/home/index/index.js
 let mytag = true;
+let aciveTag = true;
 const util = require('../../../utils/ajax.js');
 const app = getApp();
 Page({
@@ -242,6 +243,10 @@ Page({
     })
   },
   getBottomList(i){
+    if(!mytag || !aciveTag){
+      return;
+    }
+
     util.ajax({
       url: '/v1/ybh/list/' + this.data.activeIndex + '/' + this.data.page.page + '/' + this.data.page.pageSize,
       method: 'GET',
@@ -250,7 +255,7 @@ Page({
         
       },
       success: (res) => {
-      
+        aciveTag = true;
         mytag = true;
         if(!res.data.list){
           return;
@@ -296,7 +301,9 @@ Page({
       bottomList : []
      
     })
+
     this.getBottomList();
+    aciveTag = false;
   },
   toSearch(){
     wx.navigateTo({

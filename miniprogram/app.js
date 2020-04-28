@@ -168,8 +168,8 @@ App({
     }
   },
   globalData: {
-    // url: 'https://ylapi.luckywb.com/api',
-    url: 'https://yulin.luckywb.com/api',
+    url: 'https://ylapi.luckywb.com/api',
+    // url: 'https://yulin.luckywb.com/api',
     userInfo: null,
     token: '',
     latitude : '',

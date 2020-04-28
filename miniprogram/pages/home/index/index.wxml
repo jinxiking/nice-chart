@@ -64,7 +64,7 @@
         clear-timer='{{clearTimer}}'
         bindcallback="myLinsterner"
         ></count-down>
-    
+      
       
       </view>
 
