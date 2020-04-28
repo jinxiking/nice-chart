@@ -9,8 +9,8 @@
   </view>
 
   <view class='user'> 
-
-    <image src='{{detail.icon}}' mode="widthFix" class='user_img' bindtap="showScan"></image>
+     <!-- bindtap="showScan" -->
+    <image src='{{detail.icon}}' mode="widthFix" class='user_img'></image>
   </view>
 
   <view class='user_name'> 

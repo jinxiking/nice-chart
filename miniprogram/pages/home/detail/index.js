@@ -29,6 +29,7 @@ Page({
       //&是我们定义的参数链接方式
       let useId=scene.split("&")[0];
       let comeId=scene.split('&')[1];
+      console.log(scene)
       //其他逻辑处理。。。。。
       this.setData({
         eid : useId,

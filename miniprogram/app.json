@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/special/welcome/index",
+    "pages/my/coupon/index",
+
     "pages/home/advertising/index",
     "pages/active/index/index",
     "pages/my/index/index",
@@ -15,7 +17,7 @@
     "pages/my/mesCenter/index",
     "pages/my/question/index",
     "pages/home/login/index",
-    "pages/my/coupon/index",
+
     "pages/my/activeDetail/index",
     "pages/my/activeList/index",
     "pages/my/mesDetail/index"

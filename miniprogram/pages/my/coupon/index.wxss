@@ -39,7 +39,7 @@
 .item_cont{
   display: flex;
   position: relative;
-  
+  min-height:190rpx;
 }
 
 .card_img{
